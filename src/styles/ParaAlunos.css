@@ -2,114 +2,121 @@
 .hero-section {
     position: relative;
     margin: 0px auto;
-
     width: 100%;
-    height: 400px; /* Ajuste conforme necessário */
+    height: 400px; /* Ajuste conforme necesario */
     overflow: hidden;
-  }
+    margin-top: 98px  !important;
+
+}
   
-  .hero-image {
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Garante que a imagem cubra toda a área */
-  }
+}
   
-  .hero-text {
+.hero-text {
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    /* background: rgba(0, 0, 0, 0.5); */
-
     padding: 20px;
-    color: #000; /* Texto branco */
+    color: #fff; /* Texto blanco */
     border-radius: 8px;
     max-width: 400px; /* Ajuste para evitar que fique muito largo */
-  }
+}
   
-  .hero-text h1 {
+.hero-text h1 {
     font-size: 2rem;
     margin-bottom: 10px;
-  }
+}
   
-  .hero-text p {
+.hero-text p {
     font-size: 1.2rem;
     margin-bottom: 15px;
-  }
+}
   
-  .hero-text .btn {
-    background-color: #ffb400; /* Cor chamativa */
+.hero-text .btn {
+    background-color: #9b51e0; /* Color principal */
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
-    color: #000;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
-  }
+}
   
-  .hero-text .btn:hover {
-    background-color: #ffa000; /* Efeito hover */
-  }
+.hero-text .btn:hover {
+    background-color: #7a38b1; /* Variante del color principal */
+}
   
-  /* Benefits */
-  .para-alunos-benefits {
+/* Benefícios */
+.para-alunos-benefits {
     text-align: center;
     padding: 40px 20px;
-  }
+    background-color: #f9f9f9;
+}
   
-  .para-alunos-benefits h2 {
+.para-alunos-benefits h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-  }
+    color: #9b51e0; /* Color principal */
+}
   
-  .benefit-list {
+.benefit-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas por linha */
     gap: 20px; /* Espaçamento entre os itens */
     max-width: 900px;
     margin: 0 auto; /* Centraliza a grid */
-  }
+}
   
-  .benefit-item {
-    background: #f9f9f9;
+.benefit-item {
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    transition: transform 0.3s ease;
+}
   
-  .benefit-item img {
+.benefit-item:hover {
+    transform: translateY(-5px); /* Efeito de hover */
+}
+  
+.benefit-item img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
-  }
+}
   
-  .benefit-item p {
+.benefit-item p {
     font-size: 1rem;
-  }
+    color: #333;
+}
   
-  
-  /* Como Funciona */
-  .como-funciona {
+/* Como Funciona */
+.como-funciona {
     text-align: center;
     padding: 40px 20px;
-  }
+}
   
-  .como-funciona h2 {
+.como-funciona h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-  }
+    color: #9b51e0; /* Color principal */
+}
   
-  .como-funciona ol {
+.como-funciona ol {
     list-style: none; /* Remove os números padrão da lista */
     padding: 0;
     max-width: 700px;
     margin: 0 auto; /* Centraliza a lista */
-  }
+}
   
-  .como-funciona li {
+.como-funciona li {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -119,12 +126,12 @@
     border-radius: 8px;
     margin-bottom: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .como-funciona li i {
+.como-funciona li i {
     font-size: 1.8rem;
-    color: #007bff;
-    background: #e6f0ff;
+    color: #fff;
+    background: #9b51e0; /* Color principal */
     padding: 10px;
     border-radius: 50%;
     width: 40px;
@@ -132,43 +139,70 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
   
-  /* Formulário */
-  .para-alunos-form {
+/* Formulário */
+.para-alunos-form {
     background-color: #fff;
     padding: 40px;
     text-align: center;
-  }
+}
   
-  .para-alunos-form h2 {
+.para-alunos-form h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-  }
+    color: #9b51e0; /* Color principal */
+}
   
-  .para-alunos-form form {
+.para-alunos-form form {
     max-width: 500px;
     margin: 0 auto;
     text-align: left;
-  }
+}
   
-  .para-alunos-form label {
+.para-alunos-form label {
     display: block;
     font-weight: bold;
     margin-top: 15px;
-  }
+    color: #333;
+}
   
-  .para-alunos-form input,
-  .para-alunos-form textarea {
+.para-alunos-form input,
+.para-alunos-form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-  }
+}
   
-  .para-alunos-form button {
+.para-alunos-form button {
+    background-color: #9b51e0; /* Color principal */
+    color: #fff;
     width: 100%;
     margin-top: 20px;
-  }
+    padding: 10px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+  
+.para-alunos-form button:hover {
+    background-color: #7a38b1; /* Variante del color principal */
+}
+
+/* Footer */
+.home-footer {
+    background-color: #9b51e0; /* Color principal */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+  
+.home-footer p {
+    margin: 0;
+    font-size: 1rem;
+}

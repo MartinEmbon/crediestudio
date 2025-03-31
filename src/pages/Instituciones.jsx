@@ -6,6 +6,7 @@ import creditCardIcon from "../assets/credit-card.avif";
 import pixIcon from "../assets/pix.avif";
 import boletoIcon from "../assets/credito-institucion.avif";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Instituciones = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,8 @@ const Instituciones = () => {
         <div className="hero-text">
         <h1>Checkout completo para vender tu curso</h1>
           <p>Tené una experiencia de compra simplificada, gestioná tus ventas y obtené más tiempo para enfocarte en lo que importa: la enseñanza.</p>
-          <button className="btn">Contáctanos</button>
+          <Link to="/contacto" className="btn">Contáctanos</Link>
+
         </div>
       </div>
 
@@ -74,7 +76,7 @@ const Instituciones = () => {
 
             <div className="benefit">
               <img src={pixIcon} alt="Pix / Boleto" />
-              <h3>Boleto/Pix al contado</h3>
+              <h3>Al contado</h3>
               <p>Vende tus cursos en hasta 36 cuotas con boleto bancario o Pix con financiamiento sin complicaciones.</p>
               <ul>
               <li><span className="bullet">✔</span> Alcanzá a personas sin tarjeta de crédito</li>

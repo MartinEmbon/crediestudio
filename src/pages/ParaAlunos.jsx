@@ -9,7 +9,7 @@ import invoiceIcon from "../assets/invoice.avif";
 import dashboardIcon from "../assets/dashboard.avif";
 import whatsappIcon from "../assets/whatsapp.avif";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 const ParaAlunos = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -53,7 +53,8 @@ const ParaAlunos = () => {
         <div className="hero-text">
           <h1>Pagá en hasta 36 cuotas</h1>
           <p>¡Todo en menos de 3 minutos!</p>
-          <button className="btn">Ingresá al Portal</button>
+          <Link to="/signin" className="btn">Ingresá al Portal</Link>
+
         </div>
       </div>
 

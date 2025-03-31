@@ -168,10 +168,10 @@ const SignUp = () => {
                                 </button>
                                 {/* Back Button to Step 1 */}
                                 <button
-                                    type="button"
+                                    type="button back-btn-landing"
                                     onClick={() => setRole(null)}
                                     className="btn back-btn"
-                                    style={{ marginTop: "10px", backgroundColor: "#ccc", color: "#000" }}
+                                    // style={{ marginTop: "10px", backgroundColor: "#ccc", color: "#000" }}
                                 >
                                     Volver a seleccionar tipo de usuario
                                 </button>

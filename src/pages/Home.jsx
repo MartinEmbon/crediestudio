@@ -37,7 +37,7 @@ const Home = () => {
             Aseguramos estabilidad financiera, menos deserción y más inscripciones
             para que puedas enfocarte en lo más importante: la enseñanza.
           </p>
-    <Link to="/contact" className="btn">FALE CONOSCO</Link>
+    <Link to="/contacto" className="btn">Contáctanos</Link>
   </div>
 </section>
 
@@ -76,10 +76,12 @@ const Home = () => {
 
    {/* Como Funciona */}
 <section className="home-como-funciona">
-  <h2>COMO FUNCIONA</h2>
+  <h2>CÓMO FUNCIONA  </h2>
   <ol>
-    <li><i className="fas fa-building"></i> Parceria com a instituição de ensino, onboarding com estudantes e faturamento simplificado.</li>
-    <li><i className="fas fa-calendar-check"></i> Instituições recebem na data acordada, com mais dinheiro em caixa e menos trabalho.</li>
+    <li><i className="fas fa-building"></i> Alianza con la institución educativa, onboarding con estudiantes y facturación simplificada.
+    </li>
+    <li><i className="fas fa-calendar-check"></i> Las instituciones reciben en la fecha acordada, con más dinero en caja y menos trabajo.
+</li>
   </ol>
 </section>
 
