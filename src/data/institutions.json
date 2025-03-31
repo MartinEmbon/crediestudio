@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Universidad de Buenos Aires",
+      "courses": ["Derecho", "Medicina", "Ingeniería", "Psicología"]
+    },
+    {
+      "name": "Universidad Nacional de Córdoba",
+      "courses": ["Arquitectura", "Odontología", "Economía", "Informática"]
+    },
+    {
+      "name": "Universidad de Chile",
+      "courses": ["Administración", "Matemáticas", "Diseño Gráfico", "Física"]
+    }
+  ]
+  

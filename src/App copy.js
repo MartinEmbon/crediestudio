@@ -24,12 +24,21 @@ import ParaAlunos from "./pages/ParaAlunos";
 import UserProfile from "./pages/UserProfile";
 import DashboardInstitution from "./pages/DashboardInstitution";
 
-import ApplicationsPage from "./pages/ApplicationsPage";
-
-
-
 
 const App = () => {
+
+    // Get user info from Redux
+    const userInfo = useSelector((state) => state.user.userInfo);
+
+    // Function to determine which dashboard to show
+    const getDashboard = () => {
+      if (!userInfo) return <Navigate to="/login" />; // Redirect if not logged in
+      if (userInfo.role === "student") return <UserDashboard />;
+      if (userInfo.role === "institution") return <DashboardInstitution />;
+      return <UserDashboard />; // Default to user dashboard
+    };
+
+    
   return (
     <Provider store={store}>
       <GoogleOAuthProvider clientId="867228903962-3rs922ieqcl8ttpaa8glcl0r0so4d6ps.apps.googleusercontent.com">
@@ -60,14 +69,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="/applications"
-              element={
-                <ProtectedRoute>
-                  <ApplicationsPage />
-                </ProtectedRoute>
-              }
-            />
+           
            <Route
               path="/perfil-usuario"
               element={
@@ -97,18 +99,19 @@ const App = () => {
               path="/dashboard"
               element={
                 <ProtectedRoute>
-                  <UserDashboard />
+                  {/* <Dashboard /> */}
+                  {getDashboard()}
                 </ProtectedRoute>
               }
             />
-            <Route
+            {/* <Route
               path="/dashboard-institution"
               element={
                 <ProtectedRoute>
                   <DashboardInstitution />
                 </ProtectedRoute>
               }
-            />
+            /> */}
           </Routes>
         </BrowserRouter>
       </GoogleOAuthProvider>

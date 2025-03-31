@@ -1,0 +1,78 @@
+.instituciones-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: "Arial, sans-serif";
+}
+
+.instituciones-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.instituciones-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.instituciones-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.instituciones-benefits {
+    margin-bottom: 40px;
+}
+
+.instituciones-benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.instituciones-benefits ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.instituciones-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.instituciones-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.instituciones-form input,
+.instituciones-form textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.instituciones-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

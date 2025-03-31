@@ -1,0 +1,124 @@
+/* Container Principal */
+.home-container {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Hero Section */
+  .home-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    background: #007bff;
+    color: white;
+    padding: 50px;
+  }
+  
+  .home-hero-text {
+    max-width: 600px;
+  }
+  
+  .home-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .home-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .home-hero-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .home-hero-buttons .btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .home-hero-buttons .btn:hover {
+    background-color: #e65c00;
+  }
+  
+  /* Beneficios */
+  .home-benefits {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .home-benefits h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .home-benefits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  .home-benefit {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .home-benefit p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Testimonios */
+  .home-testimonials {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .home-testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .home-testimonial {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-testimonial p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Footer */
+  .home-footer {
+    padding: 30px 20px;
+    background: #333;
+    color: white;
+    text-align: center;
+  }
+  
+  .home-footer p {
+    font-size: 1rem;
+    color: #bbb;
+  }
+  

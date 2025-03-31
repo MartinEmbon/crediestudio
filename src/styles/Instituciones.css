@@ -1,0 +1,165 @@
+/* Hero Section */
+.hero-instituciones {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 500px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .hero-text .btn {
+    background: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Instituciones Main */
+  .instituciones-container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .instituciones-main h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .instituciones-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .benefit {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .benefit img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .benefit h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .benefit ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .benefit ul li {
+    font-size: 1rem;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo del bullet point */
+  .bullet {
+    color: #ff6600;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .benefit ul {
+    padding-left: 0;
+    margin-left: 0;
+    list-style-type: none;
+  }
+  
+  .benefit li {
+    display: flex;
+    align-items: center; /* Aligns icons with text */
+    min-height: 40px; /* Adjust this value based on your design */
+    margin-bottom: 10px; /* Adds spacing between items */
+  }
+  
+  
+  .benefit ul {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  
+  /* Formulario */
+  .instituciones-form {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .instituciones-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .instituciones-form form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .instituciones-form label {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .instituciones-form input,
+  .instituciones-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .instituciones-form button {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
