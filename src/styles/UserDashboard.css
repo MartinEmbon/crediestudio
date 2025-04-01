@@ -2,24 +2,31 @@
     text-align: center;
     padding: 50px;
     font-family: "Arial, sans-serif";
-    margin: 50px auto;
+    margin: 80px auto;
+    color: #00023c; /* Dark blue text for contrast */
   }
   
   .dashboard-container h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #00023c; /* Ensuring headers use the dark blue */
   }
   
   .dashboard-container p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: #00023c;
+    font-size: 2rem;
+  
   }
   
   .cards-container {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-bottom: 80px;
   }
+
   
   .dashboard-card {
     width: 300px;
@@ -30,6 +37,7 @@
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    color: #00023c;
   }
   
   .dashboard-card:hover {
@@ -45,17 +53,101 @@
   .dashboard-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #00023c;
   }
   
   .dashboard-card p {
     font-size: 1rem;
-    color: #555;
+    color: #00023c;
   }
   
   .card-icon {
-    color: #4CAF50; /* Green color */
+    color: #9b51e0; /* Primary purple */
     margin-bottom: 10px; /* Space between the icon and the text */
   }
+
+  .faq-question{
+    background-color: #9b51e0; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+
+
+  .faq-question:hover {
+    background-color: #7a38b1;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 1rem;
+  }
+  
+  .faq-answer.open {
+    max-height: 100px; /* Ajustá según el contenido */
+    padding: 10px 1rem;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .faq-question {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000; /* Black */
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: transparent;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 1rem;
+    color: #6A0DAD; /* Main violet color */
+    text-align: left; /* Align text to the left */
+
+  }
+  
+
+  .faq-section h2{
+    font-size: 2rem;
+    color: #9b51e0;
+  }
+
+
+  .faq-answer.open {
+    max-height: 100px; /* Adjust as needed */
+    padding: 1px 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 1rem; /* Smaller font size */
+      }
+ 
+  
+  
   .disabled-card {
     opacity: 0.5;
     pointer-events: none; /* Disable clicking */
@@ -70,4 +162,60 @@
     border-radius: 5px;
     border: 1px solid #f5c6cb;
   }
+
+  .para-alunos-form{
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  .faq-section{
+    margin-top: 20px;
+  }
+
+
+
+  /* Como Funciona */
+.como-funciona-dashboard {
+    text-align: center;
+    padding: 40px 20px;
+}
   
+.como-funciona-dashboard h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #9b51e0; /* Color principal */
+}
+  
+.como-funciona-dashboard ol {
+    list-style: none; /* Remove os números padrão da lista */
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto; /* Centraliza a lista */
+}
+  
+.como-funciona-dashboard li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.como-funciona-dashboard li i {
+    font-size: 1; /* Adjust the size of the icon */
+    color: #fff;
+    background: #9b51e0; /* Color principal */
+    width: 60px; /* Set explicit width */
+    height: 40px; /* Set explicit height */
+    border-radius: 50%; /* Ensure it's a circle */
+    line-height: 40px; /* Align text vertically in the center */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    text-align: center; /* Center the text */
+    margin-right: 15px; /* Space between the circle and the text */
+}

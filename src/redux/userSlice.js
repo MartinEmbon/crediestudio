@@ -6,6 +6,14 @@ const userSlice = createSlice({
     userInfo: JSON.parse(localStorage.getItem("userInfo")) || null,
   },
   reducers: {
+    // setUser: (state, action) => {
+    //     state.userInfo = {
+    //       ...action.payload,  // Spread existing user info to ensure all properties are kept
+    //       email: action.payload.email,  // Ensure email is explicitly included
+    //     };
+      
+    //     localStorage.setItem("userInfo", JSON.stringify(state.userInfo));
+    //   },
     setUser: (state, action) => {
       state.userInfo = action.payload;
       localStorage.setItem("userInfo", JSON.stringify(action.payload));

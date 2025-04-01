@@ -1,5 +1,4 @@
-/* Profile container */
-.profile-container { 
+.profile-container {
     text-align: center;
     padding: 30px;
     font-family: "Arial, sans-serif";
@@ -8,7 +7,6 @@
     margin-top: 80px;
 }
 
-/* Profile Card */
 .profile-card {
     background: linear-gradient(135deg, #ffffff, #f0f0f0);
     padding: 25px;
@@ -17,31 +15,32 @@
     max-width: 420px;
     margin: 20px auto;
     text-align: center;
+    /* transition: all 0.3s ease-in-out; */
 }
 
-/* Profile Pic */
+/* .profile-card:hover {
+    transform: translateY(-3px);
+} */
+
 .profile-pic {
     font-size: 80px;
-    color: #9b51e0; /* Primary Color */
+    color: #2c3e50;
     margin-bottom: 15px;
 }
 
-/* Heading */
 h1, h2 {
-    color: #9b51e0; /* Primary Color */
+    color: #2c3e50;
     font-weight: 600;
 }
 
-/* Profile Info */
 p {
     font-size: 16px;
     color: #555;
     margin: 10px 0;
 }
 
-/* Edit Button */
 .edit-btn {
-    background-color: #9b51e0 !important; /* Primary Color */
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -50,28 +49,13 @@ p {
     cursor: pointer;
     border-radius: 6px;
     margin-top: 15px;
+    /* transition: background 0.3s; */
 }
 
 .edit-btn:hover {
-    background-color: #8e44ad !important;  /* Slightly darker for hover */
-}
-.back-to-dash{
-    margin-bottom: 0 !important;
+    background-color: #2980b9;
 }
 
-.back-to-dash, .loan-form-submit{
-    background-color: #9b51e0 !important; /* Primary Color */
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
-    margin-top: 15px;
-}
-
-/* Loan Form */
 .loan-form {
     background: white;
     padding: 20px;
@@ -80,10 +64,8 @@ p {
     max-width: 500px;
     margin: 20px auto;
     text-align: left;
-
 }
 
-/* Form Labels */
 .loan-form label {
     display: block;
     font-weight: bold;
@@ -91,9 +73,8 @@ p {
     color: #333;
 }
 
-/* Form Inputs */
 .loan-form input, .loan-form select {
-    width: calc(100% - 22px);
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -101,7 +82,6 @@ p {
     font-size: 14px;
 }
 
-/* Submit Button */
 .loan-form button {
     width: 100%;
     /* background-color: #27ae60; */
@@ -111,22 +91,21 @@ p {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    /* transition: background 0.3s; */
 }
 
 .loan-form button:hover {
-    background-color: #219150; /* Darker green for hover */
+    background-color: #219150;
 }
 
-/* Form Footer */
 .form-footer {
     width: 100%;
     text-align: center;
     margin-top: 15px;
 }
 
-/* Back Button */
 .back-button {
-    background-color: #e74c3c; /* Red for Back */
+    background-color: #e74c3c;
     color: white;
     margin-top: 20px;
     padding: 10px 15px;
@@ -137,26 +116,25 @@ p {
 }
 
 .back-button:hover {
-    background-color: #c0392b; /* Darker red for hover */
+    background-color: #c0392b;
 }
 
-/* Terms Check */
 .check {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 14px;
 }
-
-/* Footer */
-.home-footer {
+ /* Footer */
+ .home-footer {
     padding: 30px 20px;
     background: #333;
     color: white;
     text-align: center;
-}
-
-.home-footer p {
+  }
+  
+  .home-footer p {
     font-size: 1rem;
     color: #bbb;
-}
+  }
+  

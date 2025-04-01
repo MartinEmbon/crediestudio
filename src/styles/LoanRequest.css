@@ -2,6 +2,8 @@
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
+    margin-top: 80px;
+
   }
   
   .loan-header {
@@ -38,7 +40,7 @@
   
   .loan-form button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    /* background-color: #007BFF; */
     color: white;
     border: none;
     border-radius: 5px;
@@ -80,3 +82,31 @@
     color: #bbb;
   }
   
+  .request-credit {
+    background-color: #9b51e0; /* Primary Color */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.request-credit:hover {
+    background-color: #8e44ad !important;  /* Slightly darker for hover */
+}
+
+
+.back-to-dash-loan{
+    background-color: #9b51e0 !important; /* Primary Color */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 15px;
+}

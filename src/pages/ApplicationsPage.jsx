@@ -75,7 +75,7 @@ const ApplicationsPage = () => {
                     </tbody>
                 </table>
 
-                <button className="loan-form button back-button" onClick={() => navigate(-1)}>
+                <button className="loan-form button back-button back-to-institution-dash" onClick={() => navigate(-1)}>
                     Volver
                 </button>
             </div>

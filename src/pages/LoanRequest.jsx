@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { requestLoan } from "../api/loanAPI";
-import institutionsData from "../data/institutions.json";
+// import institutionsData from "../data/institutions.json";
 import "../styles/LoanRequest.css";
 import NavbarLoggedIn from "../NavbarLoggedUser";
 import axios from 'axios';
@@ -37,16 +37,16 @@ const LoanRequest = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [submissionStatus, setSubmissionStatus] = useState("");
-
   const [courses, setCourses] = useState([]);
+  const [institutions, setInstitutions] = useState([]);
 
-  useEffect(() => {
-    const selectedInstitution = institutionsData.find(
-      (inst) => inst.name === formData.institution
-    );
-    setCourses(selectedInstitution ? selectedInstitution.courses : []);
-    setFormData((prev) => ({ ...prev, course: "" }));
-  }, [formData.institution]);
+//   useEffect(() => {
+//     const selectedInstitution = institutionsData.find(
+//       (inst) => inst.name === formData.institution
+//     );
+//     setCourses(selectedInstitution ? selectedInstitution.courses : []);
+//     setFormData((prev) => ({ ...prev, course: "" }));
+//   }, [formData.institution]);
 
   const handleChange = (e) => {
     setFormData({
@@ -55,7 +55,28 @@ const LoanRequest = () => {
     });
   };
 
+ // Fetch institutions and courses from Firestore
+ useEffect(() => {
+    const fetchInstitutionsAndCourses = async () => {
+      try {
+        const response = await axios.get("https://list-institution-and-couses-for-loan-589432081267.us-central1.run.app");
+        setInstitutions(response.data.institutions); // Store institutions and their courses
+      } catch (error) {
+        console.error("Error fetching institutions and courses:", error);
+      }
+    };
 
+    fetchInstitutionsAndCourses();
+  }, []);
+
+  // Update courses when an institution is selected
+  useEffect(() => {
+    const selectedInstitution = institutions.find(
+      (inst) => inst.institutionName === formData.institution
+    );
+    setCourses(selectedInstitution ? selectedInstitution.courses : []);
+    setFormData((prev) => ({ ...prev, course: "" })); // Reset course when institution changes
+  }, [formData.institution, institutions]);
   
   
   const handleSubmit = async (e) => {
@@ -123,22 +144,26 @@ const LoanRequest = () => {
             <label>
               Institución:
               <select name="institution" value={formData.institution} onChange={handleChange} required>
-                <option value="">Seleccione una institución</option>
-                {institutionsData.map((inst) => (
-                  <option key={inst.name} value={inst.name}>{inst.name}</option>
-                ))}
+              <option value="">Seleccione una institución</option>
+            {institutions.map((inst) => (
+              <option key={inst.institutionName} value={inst.institutionName}>
+                {inst.institutionName}
+              </option>
+            ))}
               </select>
             </label>
 
             <label>
-              Curso:
-              <select name="course" value={formData.course} onChange={handleChange} required disabled={!formData.institution}>
-                <option value="">Seleccione un curso</option>
-                {courses.map((course) => (
-                  <option key={course} value={course}>{course}</option>
-                ))}
-              </select>
-            </label>
+          Curso:
+          <select name="course" value={formData.course} onChange={handleChange} required disabled={!formData.institution}>
+            <option value="">Seleccione un curso</option>
+            {courses.map((course) => (
+              <option key={course.id} value={course.id}> {/* Use course.id as the value */}
+                {course.name} {/* Display course.name */}
+              </option>
+            ))}
+          </select>
+        </label>
 
             <label>
               Monto Solicitado:
@@ -155,7 +180,7 @@ const LoanRequest = () => {
               <textarea name="reason" value={formData.reason} onChange={handleChange} required />
             </label>
 
-            <button type="submit" disabled={loading}>{loading ? "Procesando..." : "Solicitar Crédito"}</button>
+            <button type="submit" className="request-credit" disabled={loading}>{loading ? "Procesando..." : "Solicitar Crédito"}</button>
             {error && <p className="loan-error">{error}</p>}
           </form>
 
@@ -163,7 +188,7 @@ const LoanRequest = () => {
           {submissionStatus && <p className="loan-success">{submissionStatus}</p>}
         </main>
 
-        <button className="loan-form button back-button" onClick={() => navigate(-1)}>
+        <button className="loan-form button back-button back-to-dash-loan" onClick={() => navigate(-1)}>
           Volver
         </button>
       </div>

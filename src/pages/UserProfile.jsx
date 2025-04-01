@@ -39,6 +39,9 @@ const UserProfile = () => {
           setMonthlyIncome(loanData.monthlyIncome || "");
           setCoSigner(loanData.coSigner || "");
           setDateOfBirth(loanData.dateOfBirth || "");
+          setCity(loanData.address || "");
+          setZipCode(loanData.address || "");
+
         }
       } catch (error) {
         console.error("Error fetching loan data:", error);
@@ -68,6 +71,8 @@ const UserProfile = () => {
   const [monthlyIncome, setMonthlyIncome] = useState("");
   const [coSigner, setCoSigner] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState("");
 
 
   // Handle Loan Form Submit
@@ -83,6 +88,8 @@ const UserProfile = () => {
     const loanApplicationData = {
       phone,
       address,
+      city,
+      zipCode,
       lastAcademicTitle,
       yearLastAcademicYear,
       employmentStatus,
@@ -145,6 +152,22 @@ const UserProfile = () => {
                   required
                 />
 
+<label>Ciudad:</label>
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  required
+                />
+
+<label>Código Postal:</label>
+                <input
+                  type="text"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
+                  required
+                />
+
                 <label>Último Grado Académico:</label>
                 <input
                   type="text"
@@ -181,27 +204,27 @@ const UserProfile = () => {
                   <option value="full_time">Tiempo completo</option>
                 </select>
 
-                <label>Ingreso Mensual:</label>
+                <label>Ingreso Mensual Comprobable:</label>
                 <input
                   type="number"
                   value={monthlyIncome}
                   onChange={(e) => setMonthlyIncome(e.target.value)}
                 />
 
-                <label>Co-Firmante:</label>
+                {/* <label>Co-Firmante:</label>
                 <input
                   type="text"
                   value={coSigner}
                   onChange={(e) => setCoSigner(e.target.value)}
-                />
+                /> */}
 
                 <div className="form-footer">
-                  <label className="check">
+                  {/* <label className="check">
                     <input type="checkbox" required className="checkIcon" />
                     Acepto los términos y condiciones del préstamo.
-                  </label>
+                  </label> */}
                   <button type="submit" className="loan-form-submit">
-                    Enviar Solicitud
+                    Actualizar Perfil
                   </button>
                 </div>
               </form>
@@ -214,28 +237,33 @@ const UserProfile = () => {
                 <p><strong>Fecha de Nacimiento:</strong> {dateOfBirth}</p>
                 <p><strong>Teléfono:</strong> {phone}</p>
                 <p><strong>Dirección:</strong> {address}</p>
+                <p><strong>Ciudad:</strong> {city}</p>
+
+                <p><strong>Código Postal:</strong> {zipCode}</p>
+
                 <p><strong>Último Grado Académico:</strong> {lastAcademicTitle}</p>
                 <p><strong>Año de Egreso:</strong> {yearLastAcademicYear}</p>
                 <p><strong>Estado de Empleo:</strong> {employmentStatus}</p>
                 <p><strong>Ingreso Mensual:</strong> {monthlyIncome}</p>
-                <p><strong>Co-Firmante:</strong> {coSigner}</p>
+                {/* <p><strong>Co-Firmante:</strong> {coSigner}</p> */}
                 <button
                   className="edit-btn"
                   onClick={() => setIsEditing(true)}
                 >
                   ✏️ Editar Perfil
                 </button>
+                <button
+          className="loan-form button back-button back-to-dash"
+          onClick={() => isEditing ? setIsEditing(false) : navigate("/dashboard")}
+        >
+          {isEditing ? 'Volver' : 'Volver al Dashboard'}
+        </button>
               </div>
             )}
           </>
         )}
 
-        <button
-          className="loan-form button back-button"
-          onClick={() => isEditing ? setIsEditing(false) : navigate("/dashboard")}
-        >
-          {isEditing ? 'Volver' : 'Volver al Dashboard'}
-        </button>
+       
       </div>
        {/* Footer */}
        <footer className="home-footer">

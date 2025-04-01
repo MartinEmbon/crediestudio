@@ -6,6 +6,8 @@ import NavbarLoggedIn from "../NavbarLoggedUser";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
+import "../styles/CourseSummary.css"
+
 const CourseSummary = () => {
   // Simulación de datos obtenidos desde la API o Redux
   const [courseData, setCourseData] = useState(null);
@@ -56,108 +58,103 @@ const CourseSummary = () => {
 
   return (
     <>
-    <NavbarLoggedIn onLogout={onLogout}/>
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1>Resumen de tu Curso</h1>
-      </header>
-      <main style={styles.main}>
-        {courseData ? (
-          <>
-            <h2>{courseData.courseName}</h2>
-            <p><strong>Precio total:</strong> ${courseData.totalPrice}</p>
-            <p><strong>Cuotas restantes:</strong> {remainingQuotas}</p>
-            <p><strong>Lo que has pagado hasta el momento:</strong> ${courseData.paidAmount}</p>
-            <p><strong>Restante por pagar:</strong> ${remainingAmount}</p>
+      <NavbarLoggedIn onLogout={onLogout} />
+      <div className="course-summary-container">
+        <header className="course-summary-header">
+          <h1>Resumen de tu Curso</h1>
+        </header>
+        <main className="course-summary-main">
+          {courseData ? (
+            <>
+              <h2>{courseData.courseName}</h2>
+              <div className="summary-details">
+                <p><strong>Precio total:</strong> ${courseData.totalPrice}</p>
+                <p><strong>Cuotas restantes:</strong> {remainingQuotas}</p>
+                <p><strong>Lo que has pagado hasta el momento:</strong> ${courseData.paidAmount}</p>
+                <p><strong>Restante por pagar:</strong> ${remainingAmount}</p>
+              </div>
 
-            <h3>Historial de Pagos</h3>
-            <table style={styles.table}>
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Monto</th>
-                  <th>Método de Pago</th>
-                  <th>Recibo</th>
-                </tr>
-              </thead>
-              <tbody>
-                {courseData.paymentHistory.map((payment, index) => (
-                  <tr key={index}>
-                    <td>{payment.date}</td>
-                    <td>${payment.amount}</td>
-                    <td>{payment.method}</td>
-                    <td>{payment.receipt}</td>
+              <h3>Historial de Pagos</h3>
+              <table className="payment-history-table">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Monto</th>
+                    <th>Método de Pago</th>
+                    <th>Recibo</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {courseData.paymentHistory.map((payment, index) => (
+                    <tr key={index}>
+                      <td>{payment.date}</td>
+                      <td>${payment.amount}</td>
+                      <td>{payment.method}</td>
+                      <td>{payment.receipt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
 
-            <h3>Próxima Cuota</h3>
-            <p><strong>Fecha:</strong> {courseData.nextPaymentDate}</p>
-            <p><strong>Monto:</strong> ${courseData.nextPaymentAmount}</p>
-           <div >
-           <button className="loan-form button back-button" onClick={() => navigate(-1)}>
-          Volver
-        </button>
-            <button onClick={handlePayment} style={styles.payButton}>
-              Pagar Próxima Cuota
-            </button>
-           </div>
-          </>
-        ) : (
-          <p>Cargando información del curso...</p>
-        )}
-      </main>
+              <h3>Próxima Cuota</h3>
+              <p><strong>Fecha:</strong> {courseData.nextPaymentDate}</p>
+              <p><strong>Monto:</strong> ${courseData.nextPaymentAmount}</p>
+              <div className="button-container">
+                <button className="back-button course-summary-back-to-dash" onClick={() => navigate(-1)}>Volver</button>
+                <button className="pay-button" onClick={handlePayment}>Pagar Próxima Cuota</button>
+              </div>
+            </>
+          ) : (
+            <p>Cargando información del curso...</p>
+          )}
+        </main>
 
-      <ToastContainer />
-    </div>
+        <ToastContainer />
+      </div>
 
-     {/* Footer */}
-     <footer className="home-footer">
-        <div className="home-footer-text">
-          <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-        </div>
+      <footer className="home-footer">
+        <p>&copy; 2025 Educación Plus | Todos los derechos reservados.</p>
       </footer>
     </>
   );
 };
 
-const styles = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    textAlign: "center",
-    padding: "20px",
-  },
-  header: {
-    marginBottom: "30px",
-  },
-  main: {
-    marginTop: "30px",
-  },
-  table: {
-    width: "100%",
-    borderCollapse: "collapse",
-    marginTop: "20px",
-  },
-  th: {
-    padding: "10px",
-    borderBottom: "1px solid #ccc",
-  },
-  td: {
-    padding: "10px",
-    borderBottom: "1px solid #ccc",
-  },
-  payButton: {
-    backgroundColor: "#4CAF50",
-    color: "white",
-    padding: "10px 20px",
-    fontSize: "16px",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "20px",
-  }
+// const styles = {
+//   container: {
+//     fontFamily: "Arial, sans-serif",
+//     textAlign: "center",
+//     padding: "20px",
+//   },
+//   header: {
+//     marginBottom: "30px",
+//   },
+//   main: {
+//     marginTop: "30px",
+//   },
+//   table: {
+//     width: "100%",
+//     borderCollapse: "collapse",
+//     marginTop: "20px",
+//   },
+//   th: {
+//     padding: "10px",
+//     borderBottom: "1px solid #ccc",
+//   },
+//   td: {
+//     padding: "10px",
+//     borderBottom: "1px solid #ccc",
+//   },
+//   payButton: {
+//     backgroundColor: "#4CAF50",
+//     color: "white",
+//     padding: "10px 20px",
+//     fontSize: "16px",
+//     border: "none",
+//     borderRadius: "5px",
+//     cursor: "pointer",
+//     marginTop: "20px",
+//   }
   
-};
+// };
 
 export default CourseSummary;

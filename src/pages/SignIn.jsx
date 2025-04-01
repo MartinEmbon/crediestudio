@@ -40,9 +40,10 @@ const SignIn = () => {
             "https://user-login-589432081267.us-central1.run.app",
             { email, password }
         );
+        console.log("Full response:", response.data); // Log the full response
 
         const userData = response.data.user;
-
+// console.log("Userdata hey",userData)
         // Store user info in Redux
         dispatch(setUser({ userInfo: { name: userData.name, email: userData.email }, userRole: userData.role }));
 
@@ -110,7 +111,7 @@ const handleGoogleLoginSuccess = (response) => {
             <button type="submit" className="btn">Ingresar</button>
           </form>
           <p>O iniciá sesión con Google:</p>
-          <GoogleLogin onSuccess={handleGoogleLoginSuccess} theme="filled_blue" />
+          <GoogleLogin onSuccess={handleGoogleLoginSuccess} />
         </div>
 
         <div className="signin-right">
