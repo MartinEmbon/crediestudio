@@ -1,0 +1,95 @@
+/* General Navbar Styling */
+nav {
+  background-color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center the navbar content */
+  align-items: center; /* Align items vertically */
+  padding: 15px 20px;
+}
+
+/* Logo Styling */
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+
+/* Logo Image Adjustment */
+nav .logo img {
+  max-width: 150px; /* Adjust the max width as needed */
+  height: auto;     /* Maintain the aspect ratio */
+}
+
+/* Nav Links Container Styling */
+nav .nav-links {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align the items vertically */
+  flex-grow: 1; /* Makes sure it takes up all available space */
+}
+
+/* Nav Links Styling */
+nav .nav-links ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav .nav-links ul li {
+  margin-left: 20px;
+}
+
+nav .nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav .nav-links ul li a:hover {
+  color: #007bff;
+}
+
+/* Button Styling (for auth-buttons) */
+.auth-buttons {
+  display: flex;
+  align-items: center; /* Align buttons to the same height */
+  gap: 10px; /* Adds space between buttons */
+}
+
+.auth-buttons .btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Button Types */
+.btn-outline {
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}

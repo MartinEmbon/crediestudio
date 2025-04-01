@@ -3,8 +3,7 @@
     position: relative;
     width: 100%;
     height: 400px;
-    margin-top: 98px  !important;
-
+    margin-top: 98px !important;
   }
   
   .hero-image {
@@ -99,7 +98,7 @@
     font-weight: bold;
     margin-right: 8px;
   }
-
+  
   .benefit ul {
     padding-left: 0;
     margin-left: 0;
@@ -113,13 +112,11 @@
     margin-bottom: 10px; /* Adds spacing between items */
   }
   
-  
   .benefit ul {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
   }
-    
   
   /* Formulario */
   .instituciones-form {
@@ -155,7 +152,6 @@
   }
   
   .instituciones-form button {
-    /* background: #ff6600; */
     color: white;
     padding: 10px;
     border: none;
@@ -163,5 +159,72 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 20px;
+  }
+  
+  /* Footer */
+  .home-footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .home-footer-text p {
+    margin: 0;
+  }
+  
+  /* Mobile Styling */
+  @media (max-width: 768px) {
+    .hero-text {
+      left: 5%;
+      max-width: 90%;
+      font-size: 1.4rem;
+    }
+  
+    .hero-text h1 {
+      font-size: 1.6rem;
+    }
+  
+    .hero-text p {
+      font-size: 1rem;
+    }
+  
+    .instituciones-container {
+      padding: 20px;
+    }
+  
+    .instituciones-main h2 {
+      font-size: 1.6rem;
+    }
+  
+    .instituciones-benefits {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 20px;
+    }
+  
+    .benefit {
+      padding: 15px;
+    }
+  
+    .benefit h3 {
+      font-size: 1.1rem;
+    }
+  
+    .benefit ul li {
+      font-size: 0.9rem;
+    }
+  
+    .instituciones-form form {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .instituciones-form button {
+      font-size: 0.9rem;
+      padding: 12px 0;
+    }
+  
+    .home-footer {
+      padding: 10px;
+    }
   }
   

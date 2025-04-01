@@ -7,89 +7,96 @@ nav {
   top: 0;
   z-index: 1000;
   display: flex;
-  justify-content: center; /* Center the navbar content */
-  align-items: center; /* Align items vertically */
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 20px;
 }
 
 /* Logo Styling */
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-  padding: 5px;
-}
-
-/* Logo Image Adjustment */
 nav .logo img {
-  max-width: 150px; /* Adjust the max width as needed */
-  height: auto;     /* Maintain the aspect ratio */
+  max-width: 150px;
+  height: auto;
 }
 
-/* Nav Links Container Styling */
-nav .nav-links {
+/* Burger Menu */
+.burger-menu {
+  display: none; /* Hidden on larger screens */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  right: 50px; /* Adjusted */
+    top: 15px;
+    position: absolute;
+
+}
+
+.burger-line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Add animation for open state */
+.burger-menu.open .burger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation Links */
+.nav-links {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Align the items vertically */
-  flex-grow: 1; /* Makes sure it takes up all available space */
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
-/* Nav Links Styling */
-nav .nav-links ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
+/* 📱 Mobile Styles */
+@media (max-width: 768px) {
+  .burger-menu {
+      display: flex; /* Ensure it appears */
+  }
 
-nav .nav-links ul li {
-  margin-left: 20px;
-}
+  /* 🛠 Fix: Full-Screen Drop-Down */
+  .nav-links {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      background-color: #333;
+      flex-direction: column;
+      transition: height 0.3s ease-out;
+  }
 
-nav .nav-links ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+  /* 🛠 Fix: Increase height to fit all items */
+  .nav-links.active {
+      height: 350px; 
+  }
 
-nav .nav-links ul li a:hover {
-  color: #007bff;
-}
+  .nav-links ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0; /* Added padding for spacing */
+  }
 
-/* Button Styling (for auth-buttons) */
-.auth-buttons {
-  display: flex;
-  align-items: center; /* Align buttons to the same height */
-  gap: 10px; /* Adds space between buttons */
-}
+  .nav-links ul li {
+      margin: 15px; /* More space between items */
+  }
 
-.auth-buttons .btn {
-  padding: 8px 16px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: 10px;
-  text-align: center;
-  line-height: 1;
-}
-
-/* Button Types */
-.btn-outline {
-  border: 1px solid #007bff;
-  color: #007bff;
-}
-
-.btn-outline:hover {
-  background: #007bff;
-  color: white;
-}
-
-.btn-primary {
-  background: #007bff;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #0056b3;
+  .nav-links ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+  }
 }

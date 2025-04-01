@@ -94,3 +94,78 @@
     margin: 0;
     font-size: 1rem;
 }
+
+/*mobile*/
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .signin-container {
+        flex-direction: column; /* Stack the form and image vertically */
+        align-items: center; /* Center the content */
+        padding: 20px; /* Add some padding */
+    }
+
+    .signin-left,
+    .signin-right {
+        width: 100%; /* Full width on smaller screens */
+        padding: 20px;
+    }
+
+    .signin-left h2 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+        margin-bottom: 15px;
+    }
+
+    .signin-left input,
+    .signin-left button {
+        font-size: 0.9rem; /* Smaller font size for inputs and button */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .signin-left button {
+        font-size: 1rem; /* Maintain button font size */
+    }
+
+    .signin-right h3 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .signin-right p {
+        font-size: 1rem; /* Adjust text size */
+    }
+
+    .signin-right img {
+        width: 80%; /* Scale image down for smaller screens */
+        max-width: 300px; /* Limit maximum size */
+    }
+}
+
+/* Additional responsiveness for very small screens */
+@media (max-width: 480px) {
+    .signin-left h2 {
+        font-size: 1.3rem; /* Further reduce font size */
+    }
+
+    .signin-left input,
+    .signin-left button {
+        font-size: 0.85rem; /* Further reduce font size */
+        padding: 8px; /* Adjust padding for better spacing */
+    }
+
+    .signin-right h3 {
+        font-size: 1.3rem; /* Further reduce heading size */
+    }
+
+    .signin-right p {
+        font-size: 0.95rem; /* Slightly smaller paragraph text */
+    }
+
+    .signin-right img {
+        width: 100%; /* Full width for small screens */
+        max-width: 250px; /* Limit max image size */
+    }
+
+    .home-footer p {
+        font-size: 0.9rem; /* Slightly smaller footer text */
+    }
+}

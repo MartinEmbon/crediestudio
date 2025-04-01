@@ -321,4 +321,163 @@
     background-color: #a263e4; /* Hover effect */
   }
   
+  /* General Mobile-Friendly Styles */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+      height: 300px; /* Reduce height on mobile */
+    }
+    
+    .hero-text {
+      left: 10%;
+      max-width: 90%; /* Ensure the text doesn't stretch too wide */
+      padding: 15px;
+    }
+    
+    .hero-text h1 {
+      font-size: 1.5rem; /* Smaller title on mobile */
+    }
+    
+    .hero-text p {
+      font-size: 1rem; /* Smaller text for readability */
+    }
+    
+    .hero-text .btn {
+      font-size: 0.9rem; /* Smaller button text */
+      padding: 8px 16px; /* Adjust padding */
+    }
+  
+    /* Receita Garantida */
+    .home-receita h2 {
+      font-size: 2rem; /* Smaller title on mobile */
+    }
+  
+    .home-receita p {
+      font-size: 1rem; /* Smaller text for readability */
+      padding: 0 10px; /* Add some padding for mobile */
+    }
+  
+    /* PrincipiaPay */
+    .home-principiapay {
+      padding: 20px 10px; /* Adjust padding for mobile */
+    }
+    
+    .home-principiapay h2 {
+      font-size: 2rem; /* Smaller title on mobile */
+    }
+    
+    .home-principiapay-list {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px; /* Adjust spacing between items */
+    }
+    
+    .home-principiapay-item {
+      max-width: 100%; /* Allow items to stretch */
+      padding: 15px; /* Adjust padding */
+      margin: 10px 0; /* Add margin between items */
+    }
+    
+    /* Como Funciona */
+    .home-como-funciona h2 {
+      font-size: 1.8rem; /* Smaller title */
+    }
+  
+    .home-como-funciona ol {
+      padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+    
+    .home-como-funciona li {
+      font-size: 1rem; /* Smaller font size */
+      padding: 12px;
+    }
+  
+    .home-como-funciona li i {
+      font-size: 1.5rem; /* Adjust icon size */
+    }
+    
+    /* Benefícios para Docentes */
+    .home-beneficios h2 {
+      font-size: 1.8rem; /* Smaller title */
+    }
+  
+    .home-beneficios-list {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px; /* Adjust spacing */
+    }
+    
+    .home-beneficio {
+      max-width: 100%; /* Allow items to stretch */
+      padding: 15px;
+      text-align: center;
+    }
+  
+    /* Footer */
+    .home-footer-text p {
+      font-size: 0.9rem; /* Smaller footer text */
+    }
+  }
+  
+  /* For smaller devices (Mobile Portrait) */
+  @media (max-width: 480px) {
+    /* Hero Section */
+    .hero-section {
+      height: 250px; /* Reduce height even more for small screens */
+    }
+    
+    .hero-text {
+      left: 5%;
+      max-width: 90%;
+    }
+    
+    .hero-text h1 {
+      font-size: 1.3rem; /* Smaller font for titles */
+    }
+    
+    .hero-text p {
+      font-size: 0.9rem; /* Smaller text for better readability */
+    }
+  
+    .hero-text .btn {
+      font-size: 0.8rem; /* Even smaller button text */
+      padding: 6px 12px; /* Reduce button size */
+    }
+  
+    /* Receita Garantida */
+    .home-receita h2 {
+      font-size: 1.8rem; /* Smaller title on mobile */
+    }
+  
+    .home-receita p {
+      font-size: 0.9rem; /* Adjust text size */
+    }
+  
+    /* PrincipiaPay */
+    .home-principiapay h2 {
+      font-size: 1.8rem; /* Smaller title */
+    }
+  
+    .home-principiapay-item {
+      max-width: 100%;
+      padding: 10px; /* Reduce padding */
+    }
+  
+    /* Como Funciona */
+    .home-como-funciona h2 {
+      font-size: 1.6rem; /* Smaller heading */
+    }
+  
+    .home-como-funciona li {
+      font-size: 1rem;
+    }
+  
+    /* Benefícios para Docentes */
+    .home-beneficios h2 {
+      font-size: 1.6rem; /* Smaller heading */
+    }
+  
+    .home-beneficio {
+      padding: 12px; /* Reduce padding */
+      text-align: center;
+    }
+  }
   
