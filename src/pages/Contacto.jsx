@@ -47,7 +47,7 @@ const Contacto = () => {
         <div className="hero-text">
         <h1>Transformá tu audiencia en ganancias</h1>
         <p>
-          Ofrecé tus infoproductos con opciones de pago, recibí al contado y convertí hasta un 35% más con la
+          Ofrecé tus cursos con opciones de pago, recibí al contado y convertí hasta un 35% más con la
           mayor aprobación y agilidad del mercado.
         </p>
           <button className="btn">Contáctanos</button>

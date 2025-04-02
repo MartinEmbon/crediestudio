@@ -78,7 +78,7 @@ const Home = () => {
 <section className="home-como-funciona">
   <h2>CÓMO FUNCIONA  </h2>
   <ol>
-    <li><i className="fas fa-building"></i> Alianza con la institución educativa, onboarding con estudiantes y facturación simplificada.
+    <li><i className="fas fa-building"></i> Alianza con la institución educativa y facturación simplificada.
     </li>
     <li><i className="fas fa-calendar-check"></i> Las instituciones reciben en la fecha acordada, con más dinero en caja y menos trabajo.
 </li>
@@ -88,7 +88,7 @@ const Home = () => {
 
  {/* Benefícios para quem ensina */}
 <section className="home-beneficios">
-<h2>Beneficios para Docentes</h2>
+<h2>Beneficios Educativos</h2>
   <div className="home-beneficios-list">
     <div className="home-beneficio">
       <i className="fas fa-credit-card"></i>
@@ -103,7 +103,7 @@ const Home = () => {
     <div className="home-beneficio">
       <i className="fas fa-calendar-alt"></i>
       <h3>Portal de Pagos</h3>
-            <p>Beneficios por pagos en término y gestión digital simplificada.</p>
+            <p>Gestión digital simplificada.</p>
     </div>
   </div>
 </section>
@@ -114,17 +114,17 @@ const Home = () => {
 <h2>¿Por qué elegir CrediEstudio?</h2>
 <div className="home-porque-usar-list">
     <div className="home-porque-usar-item">
-    <p><strong>Más ventas:</strong> Aumentá hasta un 35% tus ventas con nuevas opciones de pago.</p>
+    <p><strong>Más ventas:</strong> Aumentá tus ventas con nuevas opciones de pago.</p>
     <i className="fas fa-chart-line"></i>
     </div>
     <div className="home-porque-usar-item">
     <p><strong>Equipo de especialistas:</strong> Mejorá tu conversión con un equipo dedicado trabajando para vos.</p>
     <i className="fas fa-users"></i>
     </div>
-    <div className="home-porque-usar-item">
+    {/* <div className="home-porque-usar-item">
     <p><strong>Impulsá tu negocio:</strong> Vendé tanto en lanzamientos como en cursos permanentes con la mejor anticipación del mercado.</p>
     <i className="fas fa-rocket"></i>
-    </div>
+    </div> */}
     <div className="home-porque-usar-item">
     <p><strong>Menos trámites:</strong> Nos encargamos de la gestión financiera y negociación de estudiantes morosos.</p>
     <i className="fas fa-sitemap"></i>
@@ -133,10 +133,10 @@ const Home = () => {
     <p><strong>Resultados más rápidos:</strong> Obtené previsibilidad en tus ingresos e invertí en tu institución mientras potenciamos tus ventas.</p>
     <i className="fas fa-tachometer-alt"></i>
     </div>
-    <div className="home-porque-usar-item">
+    {/* <div className="home-porque-usar-item">
     <p><strong>Asesoramiento personalizado:</strong> Contá con un Gerente de Éxito enfocado en tus estrategias y lanzamientos.</p>
     <i className="fas fa-user-tie"></i>
-    </div>
+    </div> */}
   </div>
 </section>
 
@@ -175,7 +175,7 @@ const Home = () => {
             required
           />
   
-          <label>¿Eres estudiante o institución?</label>
+          <label>Sos estudiante o institución?</label>
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="student">Estudiante</option>
             <option value="institution">Institución</option>
