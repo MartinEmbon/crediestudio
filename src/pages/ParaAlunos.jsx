@@ -79,10 +79,6 @@ const ParaAlunos = () => {
       <p><strong>Panel del Estudiante:</strong> Toda la información importante en un solo lugar.</p>
     </div>
     <div className="benefit-item">
-      <img src={dashboardIcon} alt="Painel do Aluno" />
-      <p><strong>Panel del Estudiante:</strong> Toda la información importante en un solo lugar.</p>
-    </div>
-    <div className="benefit-item">
       <img src={whatsappIcon} alt="WhatsApp" />
       <p><strong>WhatsApp:</strong> Atención personalizada y soporte exclusivo para estudiantes.</p>
     </div>
@@ -93,7 +89,7 @@ const ParaAlunos = () => {
 <div className="como-funciona">
 <h2>¿Cómo funciona?</h2>
 <ol>
-<li><i className="fas fa-1"></i> La Institución Educativa o el Infoproductor que ofrece el curso debe ser nuestro socio.</li>
+<li><i className="fas fa-1"></i> La Institución Educativa que ofrece el curso debe ser nuestro socio.</li>
     <li><i className="fas fa-2"></i> Accedés al link de compra del curso y realizás el pago dentro de la plataforma de Principia.</li>
     <li><i className="fas fa-3"></i> Elegís la forma de pago y el plan de cuotas que mejor se ajuste a tu bolsillo.</li>
   </ol>

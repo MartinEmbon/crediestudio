@@ -13,7 +13,14 @@
   .loan-main {
     margin-top: 30px;
   }
+  .loan-main h2 {
+    color: #333;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-top: 0;
+    padding: 0;
   
+  }
   .loan-form {
     display: flex;
     flex-direction: column;

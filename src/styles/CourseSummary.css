@@ -116,7 +116,7 @@
     .course-summary-container {
       padding: 10px;
     }
-  
+ 
     .credit-summary-card p,
     .payment-schedule-table th,
     .payment-schedule-table td,
@@ -137,7 +137,6 @@
   
     .payment-schedule-table,
     .payment-history-table {
-      display: block;
       overflow-x: auto;
       white-space: nowrap;
     }

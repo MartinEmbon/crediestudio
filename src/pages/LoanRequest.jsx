@@ -230,8 +230,9 @@ const LoanRequest = () => {
             <label>
               Monto Solicitado:
               <input type="number" name="requestedAmount" value={formData.requestedAmount} onChange={handleChange} required />
+            
             </label>
-
+            
             {/* <label>
               Plan de Pago (en cuotas):
               <input type="number" name="paymentPlan" value={formData.paymentPlan} onChange={handleChange} required />

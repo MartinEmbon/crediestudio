@@ -160,3 +160,17 @@ p {
     font-size: 1rem;
     color: #bbb;
 }
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #9b51e0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  
