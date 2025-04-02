@@ -117,19 +117,6 @@
     margin-top: 20px;
 }
 
-/* Footer */
-.home-footer {
-    background-color: #9b51e0; /* Footer with main color */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.home-footer-text p {
-    margin: 0;
-    font-size: 1rem;
-}
-
 
 
 /* Mobile styles */
@@ -200,7 +187,4 @@ signupfont-size: 0.85rem; /* Further reduce font size */
         max-width: 250px; /* Limit max image size */
     }
 
-    .home-footer p {
-        font-size: 0.9rem; /* Slightly smaller footer text */
-    }
 }

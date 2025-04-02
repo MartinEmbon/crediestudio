@@ -264,51 +264,6 @@
     font-weight: bold;
   }
   
-  /* Contact Form */
-  .contact-container {
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #333; /* Color de texto oscuro */
-  }
-  
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    padding: 10px;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #333;
-  }
-  
-  .contact-form button {
-    background-color: #9b51e0; /* Morado principal */
-    color: #fff;
-    font-weight: bold;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .contact-form button:hover {
-    background-color: #a263e4; /* Hover effect */
-  }
   
   /* General Mobile-Friendly Styles */
 @media (max-width: 768px) {
@@ -400,10 +355,6 @@
       text-align: center;
     }
   
-    /* Footer */
-    .home-footer-text p {
-      font-size: 0.9rem; /* Smaller footer text */
-    }
   }
   
   /* For smaller devices (Mobile Portrait) */

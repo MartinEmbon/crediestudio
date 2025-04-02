@@ -5,6 +5,7 @@ import "../styles/DashboardInstitution.css";
 import NavbarLoggedInstitution from "../NavbarLoggedInstitution";
 import { setUser } from "../redux/userSlice";
 import axios from "axios"; // Import Axios
+import Footer from "../components/Footer";
 
 
 const DashboardInstitution = () => {
@@ -284,6 +285,8 @@ const DashboardInstitution = () => {
                 <button className="btn cancel-btn" onClick={handleCloseModal}>Cancelar</button>
               </div>
             </div>
+            
+
           </div>
 
           

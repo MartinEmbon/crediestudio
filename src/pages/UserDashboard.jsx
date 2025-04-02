@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/userSlice";
 import { logout } from "../redux/userSlice";
 import axios from "axios"; // For API requests
+import Footer from "../components/Footer";
 
 const UserDashboard = () => {
     const navigate = useNavigate();
@@ -144,12 +145,7 @@ const UserDashboard = () => {
 
 
             </div>
-            {/* Footer */}
-            <footer className="home-footer">
-                <div className="home-footer-text">
-                    <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-                </div>
-            </footer>
+           <Footer/>
         </>
     );
 };

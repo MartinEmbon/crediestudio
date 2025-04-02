@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
 import "../styles/CourseSummary.css";
+import Footer from "../components/Footer";
 
 const CourseSummary = () => {
   const [courseData, setCourseData] = useState(null);
@@ -159,9 +160,7 @@ const CourseSummary = () => {
         <ToastContainer />
       </div>
 
-      <footer className="home-footer">
-        <p>&copy; 2025 Educación Plus | Todos los derechos reservados.</p>
-      </footer>
+      <Footer/>
     </>
   );
 };

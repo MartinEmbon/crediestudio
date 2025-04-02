@@ -10,6 +10,7 @@ import dashboardIcon from "../assets/dashboard.avif";
 import whatsappIcon from "../assets/whatsapp.avif";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 const ParaAlunos = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -105,7 +106,7 @@ const ParaAlunos = () => {
           <input
             type="text"
             name="name"
-            placeholder="Seu nome"
+            placeholder="Tu nombre"
             value={formData.name}
             onChange={handleChange}
             required
@@ -115,7 +116,7 @@ const ParaAlunos = () => {
 <input
             type="email"
             name="email"
-            placeholder="Seu e-mail"
+            placeholder="Correo electrónico"
             value={formData.email}
             onChange={handleChange}
             required
@@ -125,7 +126,7 @@ const ParaAlunos = () => {
 <label>Mensaje:</label>
 <textarea
             name="message"
-            placeholder="Nos conte mais sobre seu interesse e como podemos te ajudar"
+            placeholder="Contanos como podemos ayudarte"
             value={formData.message}
             onChange={handleChange}
             required
@@ -135,12 +136,7 @@ const ParaAlunos = () => {
 </form>
       </div>
 
-        {/* Footer */}
-        <footer className="home-footer">
-        <div className="home-footer-text">
-          <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-        </div>
-      </footer>
+      <Footer/>
     </>
   );
 };

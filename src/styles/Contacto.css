@@ -51,74 +51,7 @@
     background-color: #7a3cb6; /* Variante más oscura para el hover */
   }
   
-  /* Contact Form Styles */
-  .contact-container {
-    padding: 40px;
-    background-color: #f9f9f9;
-  }
-  
-  .contact-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #333; /* Color de texto oscuro */
-  }
-  
-  .contact-container p {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #555; /* Color de texto ligeramente gris */
-  }
-  
-  .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form label {
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333; /* Color de las etiquetas */
-  }
-  
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .contact-form button {
-    padding: 10px 20px;
-    background-color: #9b51e0; /* Color principal */
-    color: white;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-  }
-  
-  .contact-form button:hover {
-    background-color: #7a3cb6; /* Variante más oscura para el hover */
-  }
-  
-  /* Footer Styles */
-  .home-footer {
-    background-color: #9b51e0; /* Color principal */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .home-footer .home-footer-text p {
-    margin: 0;
-  }
+
   
   /* Mobile Styles */
   @media (max-width: 768px) {
@@ -140,39 +73,7 @@
       font-size: 1rem;
     }
   
-    .contact-container {
-      padding: 20px;
-    }
-  
-    .contact-container h2 {
-      font-size: 1.5rem;
-    }
-  
-    .contact-container p {
-      font-size: 1rem;
-    }
-  
-    .contact-form {
-      padding: 0 20px;
-    }
-  
-    .contact-form label {
-      font-size: 0.9rem;
-    }
-  
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      font-size: 0.9rem;
-    }
-  
-    .contact-form button {
-      font-size: 0.9rem;
-    }
-  
-    .home-footer {
-      padding: 10px 0;
-    }
+ 
   }
   
   /* Extra Small Mobile Styles */
@@ -183,28 +84,6 @@
   
     .hero-text p {
       font-size: 0.9rem;
-    }
-  
-    .contact-container h2 {
-      font-size: 1.2rem;
-    }
-  
-    .contact-container p {
-      font-size: 0.9rem;
-    }
-  
-    .contact-form label {
-      font-size: 0.8rem;
-    }
-  
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      font-size: 0.8rem;
-    }
-  
-    .contact-form button {
-      font-size: 0.8rem;
     }
   }
   

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -270,12 +271,8 @@ const UserProfile = () => {
 
        
       </div>
-       {/* Footer */}
-       <footer className="home-footer">
-        <div className="home-footer-text">
-          <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-        </div>
-      </footer>
+      
+      <Footer/>
     </>
   );
 };

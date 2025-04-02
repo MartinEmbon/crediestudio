@@ -4,6 +4,7 @@ import "../styles/SignUp.css"; // Asegúrate de que tu CSS esté bien configurad
 import signinphoto from "../assets/signin.png"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 
 const SignUp = () => {
@@ -191,12 +192,7 @@ const SignUp = () => {
                 {successMessage && <div className="success-message">{successMessage}</div>}
             </div>
 
-            {/* Footer */}
-            <footer className="home-footer">
-                <div className="home-footer-text">
-                    <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-                </div>
-            </footer>
+          <Footer/>
         </>
 
     );

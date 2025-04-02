@@ -77,18 +77,8 @@
     display: inline-flex !important;
   gap: 8px; /* Space between label and textarea */
   }
-   /* Footer */
-   .home-footer {
-    padding: 30px 20px;
-    background: #333;
-    color: white;
-    text-align: center;
-  }
-  
-  .home-footer p {
-    font-size: 1rem;
-    color: #bbb;
-  }
+
+
   
   .request-credit {
     background-color: #9b51e0; /* Primary Color */

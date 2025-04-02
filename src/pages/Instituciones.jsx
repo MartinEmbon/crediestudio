@@ -7,6 +7,7 @@ import pixIcon from "../assets/pix.avif";
 import boletoIcon from "../assets/credito-institucion.avif";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Instituciones = () => {
   const [formData, setFormData] = useState({
@@ -113,7 +114,7 @@ const Instituciones = () => {
             <input type="text" name="institution" placeholder="Nombre de tu institución" value={formData.institution} onChange={handleChange} required />
 
             <label>Mensaje:</label>
-            <textarea name="message" placeholder="Cuéntanos más sobre tu institución y cómo podemos ayudarte" value={formData.message} onChange={handleChange} required />
+            <textarea name="message" placeholder="Contanos sobre tu institución y cómo podemos ayudarte" value={formData.message} onChange={handleChange} required />
 
             <button type="submit" className="btn">Enviar Solicitud</button>
           </form>
@@ -121,12 +122,7 @@ const Instituciones = () => {
       </div>
         
    
-        {/* Footer */}
-        <footer className="home-footer">
-        <div className="home-footer-text">
-          <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
-        </div>
-      </footer>
+       <Footer/>
     </>
   );
 };
