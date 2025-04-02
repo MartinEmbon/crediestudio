@@ -2,6 +2,7 @@
     font-family: Arial, sans-serif;
     padding: 20px;
     margin-top: 80px;
+    max-width: 90%;
 }
 
 .dashboard-main {
@@ -164,3 +165,36 @@ li:last-child {
   .modal-content input{
     width: calc(100% - 22px);
   }
+
+  /* 📱 RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    .dashboard-main {
+        gap: 15px;
+    }
+
+    .dashboard-main section {
+        padding: 15px;
+    }
+
+    .courses li {
+        flex-direction: column; /* Acomoda en columnas en móviles */
+        align-items: flex-start;
+    }
+
+    .course-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .courses .btn {
+        width: 100%; /* Ocupa toda la fila en pantallas pequeñas */
+        margin-top: 5px;
+    }
+    .modal-buttons{
+        gap: 12px;
+    }
+}

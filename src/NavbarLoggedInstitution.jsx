@@ -21,9 +21,9 @@ const NavbarLoggedInstitution = ({ onLogout }) => {
       <div className="nav-container">
         {/* Logo */}
         <div className="logo">
-
+        <Link to="/dashboard-institution">
           <img src={logoCrediEstudio} alt="CrediEstudio Logo" />
-
+          </Link>
         </div>
 
         {/* Navigation Links */}

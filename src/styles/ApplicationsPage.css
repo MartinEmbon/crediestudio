@@ -1,75 +1,74 @@
 .applications-container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-
     margin-top: 80px;
-
 }
 
 h2 {
     text-align: center;
+    font-size: 1.5rem;
 }
 
+/* Input responsive */
 .search-bar {
-    width: 100%;
-    padding: 8px;
+    width: calc(100% - 22px);
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
+/* Envuelve la tabla para hacerla desplazable en móviles */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Tabla responsiva */
 .applications-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    min-width: 500px; /* Evita que las columnas se compriman demasiado */
 }
 
 .applications-table th,
 .applications-table td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
+    font-size: 0.95rem;
 }
 
 .applications-table th {
     background-color: #f4f4f4;
-}
-
-.back-btn {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    /* background: #007bff; */
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.back-btn:hover {
-    /* background: #0056b3; */
-}
-
-
-
-
-.back-to-institution-dash:hover {
-    background-color: #8e44ad !important;  /* Slightly darker for hover */
-}
-
-.back-to-institution-dash{
-    background-color: #9b51e0 !important; /* Primary Color */
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
     font-weight: bold;
+}
+
+/* Botón volver */
+.back-to-institution-dash {
+    display: block;
+    /* width: 100%; */
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #9b51e0;
+    color: white;
+    border: none;
     cursor: pointer;
     border-radius: 6px;
-    margin-top: 15px;
+    margin-top: 15px auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto;
+}
+
+.back-to-institution-dash:hover {
+    background-color: #8e44ad;
 }

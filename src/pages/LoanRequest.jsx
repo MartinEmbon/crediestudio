@@ -19,6 +19,39 @@ const LoanRequest = () => {
   const userData = useSelector((state) => state.user.userInfo);
     const userInfo = userData?.userInfo;
 
+    const isValidCuit = (cuit) => {
+        // Check if the cuit is exactly 11 digits long and contains only numbers
+        return /^\d{11}$/.test(cuit);
+      };
+
+      const isValidDni = (dni) => {
+        return /^\d{7,8}$/.test(dni); // Entre 7 y 8 dígitos numéricos
+      };
+
+      const isValidDateOfBirth = (dob) => {
+        const birthDate = new Date(dob);
+        const today = new Date();
+      
+        // Verificar que la fecha ingresada no sea inválida
+        if (isNaN(birthDate.getTime())) {
+          return false;
+        }
+      
+        // Verificar que no sea una fecha futura
+        if (birthDate > today) {
+          return false;
+        }
+      
+        // Verificar que la persona tenga al menos 18 años
+        const minAgeDate = new Date();
+        minAgeDate.setFullYear(today.getFullYear() - 18);
+        
+        if (birthDate > minAgeDate) {
+          return false;
+        }
+      
+        return true;
+      };
 
     console.log("Req:", userInfo);
   const [formData, setFormData] = useState({
@@ -28,7 +61,7 @@ const LoanRequest = () => {
     cuit: "", // Nuevo campo CUIT/CUIL/CDI
     dateOfBirth: "",
     requestedAmount: "",
-    paymentPlan: "",
+    paymentPlan: "0",
     reason: "",
     institution: "",
     course: "",
@@ -85,6 +118,26 @@ const LoanRequest = () => {
     setError(null);
     setSubmissionStatus("");
 
+      // Validar DNI
+  if (!isValidDni(formData.dni)) {
+    setError("El DNI debe contener entre 7 y 8 dígitos numéricos.");
+    setLoading(false);
+    return;
+  }
+
+    // Validate CUIT
+  if (!isValidCuit(formData.cuit)) {
+    setError("El CUIT debe contener exactamente 11 dígitos numéricos.");
+    setLoading(false);
+    return;
+  }
+
+  if (!isValidDateOfBirth(formData.dateOfBirth)) {
+    setError("La fecha de nacimiento es inválida o debés ser mayor de 18 años.");
+    setLoading(false);
+    return;
+  }
+
     try {
         const response = await axios.post(
           "https://loan-contact-form-589432081267.us-central1.run.app", // Replace with your actual API
@@ -110,6 +163,15 @@ const LoanRequest = () => {
       }
       setLoading(false);
     };
+    // // Get user data from Redux
+    //   const user = useSelector((state) => state.user.userInfo);
+
+    //   // Fallback: If Redux state is lost, fetch from localStorage
+    //   const storedUser = {
+    //     name: user?.name || localStorage.getItem("userName") || "Usuario Desconocido",
+    //     email: user?.email || localStorage.getItem("userEmail") || "No disponible",
+    //   };
+    
 
   return (
     <>
@@ -119,7 +181,7 @@ const LoanRequest = () => {
           <h1>Solicitá tu Crédito Educativo</h1>
         </header>
         <main className="loan-main">
-          <h2>Completá el formulario para solicitar su crédito educativo</h2>
+          <h2>Completá el formulario para iniciar el trámite de tu crédito</h2>
           <form onSubmit={handleSubmit} className="loan-form">
             <label>
               Nombre Completo:
@@ -128,12 +190,12 @@ const LoanRequest = () => {
 
             <label>
               DNI:
-              <input type="text" name="dni" value={formData.dni} onChange={handleChange} required />
+              <input type="text" name="dni" placeholder="El DNI debe contener entre 7 y 8 dígitos numéricos." value={formData.dni} onChange={handleChange} required />
             </label>
 
             <label>
-              CUIT / CUIL / CDI:
-              <input type="text" name="cuit" value={formData.cuit} onChange={handleChange} required />
+              CUIT:
+              <input type="text" name="cuit" placeholder="El CUIT debe contener exactamente 11 dígitos numéricos." value={formData.cuit} onChange={handleChange} required />
             </label>
 
             <label>
@@ -170,21 +232,21 @@ const LoanRequest = () => {
               <input type="number" name="requestedAmount" value={formData.requestedAmount} onChange={handleChange} required />
             </label>
 
-            <label>
+            {/* <label>
               Plan de Pago (en cuotas):
               <input type="number" name="paymentPlan" value={formData.paymentPlan} onChange={handleChange} required />
-            </label>
+            </label> */}
 
             <label className="additional-comments">
               Comentarios adicionales:
-              <textarea name="reason" value={formData.reason} onChange={handleChange} required />
+              <textarea name="reason" placeholder="Link del carrito del curso y/o comentarios adicionales" value={formData.reason} onChange={handleChange} required />
             </label>
 
             <button type="submit" className="request-credit" disabled={loading}>{loading ? "Procesando..." : "Solicitar Crédito"}</button>
             {error && <p className="loan-error">{error}</p>}
           </form>
 
-          {error && <p className="loan-error">{error}</p>}
+          {/* {error && <p className="loan-error">{error}</p>} */}
           {submissionStatus && <p className="loan-success">{submissionStatus}</p>}
         </main>
 

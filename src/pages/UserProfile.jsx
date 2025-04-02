@@ -70,7 +70,7 @@ const UserProfile = () => {
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [monthlyIncome, setMonthlyIncome] = useState("");
   const [coSigner, setCoSigner] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState(storedUser.dateOfBirth || ""); // Ensure it gets the stored value
   const [city, setCity] = useState("");
   const [zipCode, setZipCode] = useState("");
 
@@ -226,6 +226,11 @@ const UserProfile = () => {
                   <button type="submit" className="loan-form-submit">
                     Actualizar Perfil
                   </button>
+                  
+                  <button className="loan-form-submit" onClick={() => setIsEditing(false)}>
+  Cancelar
+</button>
+
                 </div>
               </form>
             ) : (

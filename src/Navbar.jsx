@@ -36,10 +36,12 @@ const Navbar = () => {
             {/* Nav Links */}
             <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
                 <ul>
+                <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+                <li><Link to="/instituciones" onClick={toggleMenu}>Instituciones</Link></li>
+                <li><Link to="/para-alumnos" onClick={toggleMenu}>Alumnos</Link></li>
                     <li><Link to="/signin" onClick={toggleMenu}>Iniciar Sesión</Link></li>
                     <li><Link to="/signup" onClick={toggleMenu}>Registrarse</Link></li>
-                    <li><Link to="/instituciones" onClick={toggleMenu}>Instituciones</Link></li>
-                    <li><Link to="/para-alumnos" onClick={toggleMenu}>Alumnos</Link></li>
+               
                     <li><Link to="/contacto" onClick={toggleMenu}>Contacto</Link></li>
                 </ul>
             </div>

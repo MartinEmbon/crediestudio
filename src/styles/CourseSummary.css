@@ -1,83 +1,145 @@
+/* 📌 Estilos generales */
 .course-summary-container {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    margin-top: 80px;
-}
-
-.course-summary-header {
-    margin-bottom: 30px;
-}
-
-.course-summary-main {
-    margin-top: 30px;
-}
-
-.summary-details {
-    text-align: left;
-    max-width: 400px;
+    max-width: 900px;
     margin: 0 auto;
-}
-
-.payment-history-table {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  /* 🏷️ Encabezado */
+  .course-summary-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .course-summary-header h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* 🔹 Resumen del Crédito */
+  .credit-summary-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .credit-summary-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .credit-summary-card p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  /* 🎯 Botón de pago */
+  .pay-button {
+    display: block;
+    width: 100%;
+    background-color: #9b51e0 ;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .pay-button:hover {
+    background-color: #8e44ad;
+  }
+  
+  /* 📅 Cronograma de pagos y historial */
+  .payment-schedule,
+  .payment-history {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .payment-schedule h3,
+  .payment-history h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .payment-schedule-table,
+  .payment-history-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.payment-history-table th,
-.payment-history-table td {
+  }
+  
+  .payment-schedule-table th,
+  .payment-history-table th {
+    background-color: #9b51e0 ;
+    color: white;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-}
-
-.button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.pay-button {
-    background-color: #6c757d !important;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    text-align: left;
+  }
+  
+  .payment-schedule-table td,
+  .payment-history-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* 🔘 Botón de pagar */
+  .pay-now-btn {
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-}
-
-.course-summary-back-to-dash {
-    background-color: #9b51e0 !important; /* Primary Color */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.course-summary-back-to-dash:hover {
-    background-color: #8e44ad !important;  /* Slightly darker for hover */
-}
-
-
-
-.home-footer {
-    padding: 30px 20px;
-    background: #333;
-    color: white;
-    text-align: center;
-}
-
-.home-footer p {
-    font-size: 1rem;
-    color: #bbb;
-}
-
-.course-summary-back-to-dash{
-
-}
-
+  }
+  
+  .pay-now-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* 📱 Responsivo */
+  @media (max-width: 768px) {
+    .course-summary-container {
+      padding: 10px;
+    }
+  
+    .credit-summary-card p,
+    .payment-schedule-table th,
+    .payment-schedule-table td,
+    .payment-history-table th,
+    .payment-history-table td {
+      font-size: 14px;
+    }
+  
+    .pay-button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .pay-now-btn {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  
+    .payment-schedule-table,
+    .payment-history-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+  

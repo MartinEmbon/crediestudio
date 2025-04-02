@@ -10,9 +10,9 @@ const ApplicationsPage = () => {
     const dispatch = useDispatch()
     // Mock data for applicants
     const [applicants, setApplicants] = useState([
-        { id: 1, name: "Juan Pérez", course: "Curso de Programación Web", date: "2024-03-15" },
-        { id: 2, name: "Ana Gómez", course: "Gestión Empresarial", date: "2024-04-02" },
-        { id: 3, name: "Carlos Rodríguez", course: "Finanzas para Emprendedores", date: "2024-05-20" },
+        { id: 1, name: "Juan Pérez", course: "Curso de Programación Web", date: "2024-03-15", approved: "Si" },
+        { id: 2, name: "Ana Gómez", course: "Gestión Empresarial", date: "2024-04-02", approved: "Si" },
+        { id: 3, name: "Carlos Rodríguez", course: "Finanzas para Emprendedores", date: "2024-05-20", approved: "Si" },
     ]);
 
     const onLogout = () => {
@@ -39,7 +39,7 @@ const ApplicationsPage = () => {
             <NavbarLoggedInstitution onLogout={onLogout} />
             <div className="applications-container">
                 <h2>Solicitudes de Estudiantes</h2>
-
+    
                 {/* Search Bar */}
                 <input
                     type="text"
@@ -48,39 +48,44 @@ const ApplicationsPage = () => {
                     onChange={handleSearchChange}
                     className="search-bar"
                 />
-
-                {/* Applicants Table */}
-                <table className="applications-table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Curso</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredApplicants.length > 0 ? (
-                            filteredApplicants.map((applicant) => (
-                                <tr key={applicant.id}>
-                                    <td>{applicant.name}</td>
-                                    <td>{applicant.course}</td>
-                                    <td>{applicant.date}</td>
-                                </tr>
-                            ))
-                        ) : (
+    
+                {/* Responsive Table Wrapper */}
+                <div className="table-wrapper">
+                    <table className="applications-table">
+                        <thead>
                             <tr>
-                                <td colSpan="3">No se encontraron resultados</td>
+                                <th>Nombre</th>
+                                <th>Curso</th>
+                                <th>Fecha</th>
+                                <th>Aprobado</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
-
-                <button className="loan-form button back-button back-to-institution-dash" onClick={() => navigate(-1)}>
+                        </thead>
+                        <tbody>
+                            {filteredApplicants.length > 0 ? (
+                                filteredApplicants.map((applicant) => (
+                                    <tr key={applicant.id}>
+                                        <td>{applicant.name}</td>
+                                        <td>{applicant.course}</td>
+                                        <td>{applicant.date}</td>
+                                        <td>{applicant.approved}</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="3">No se encontraron resultados</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+    
+                <button className="back-to-institution-dash" onClick={() => navigate(-1)}>
                     Volver
                 </button>
             </div>
         </>
     );
+    
 };
 
 export default ApplicationsPage;

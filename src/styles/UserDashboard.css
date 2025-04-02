@@ -219,3 +219,105 @@
     text-align: center; /* Center the text */
     margin-right: 15px; /* Space between the circle and the text */
 }
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .dashboard-container h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard-container p {
+        font-size: 1.2rem;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dashboard-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .dashboard-card p {
+        font-size: 1rem;
+    }
+
+    .como-funciona-dashboard {
+        padding: 20px;
+    }
+
+    .como-funciona-dashboard h2 {
+        font-size: 1.5rem;
+    }
+
+    .como-funciona-dashboard ol {
+        max-width: 100%;
+    }
+
+    .como-funciona-dashboard li {
+        font-size: 0.9rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .como-funciona-dashboard li i {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .faq-section {
+        margin-top: 10px;
+    }
+
+    .faq-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 8px 0;
+    }
+
+    .faq-question {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+
+    .para-alunos-form {
+        padding: 15px;
+    }
+
+    .para-alunos-form input,
+    .para-alunos-form textarea {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .home-footer {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}

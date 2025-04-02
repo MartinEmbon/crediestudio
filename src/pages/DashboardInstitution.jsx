@@ -52,7 +52,9 @@ const DashboardInstitution = () => {
 
         setShowEditModal(true);
       };
-
+      const handleViewApplications = () => {
+        navigate("/applications");
+      };
       const handleDeleteCourse = async (courseId) => {
         try {
           const response = await axios.delete(
@@ -201,12 +203,19 @@ const DashboardInstitution = () => {
                 ))}
               </ul>
             </section>
-  
+        <section className="applications">
+          <h2>Solicitudes de Estudiantes</h2>
+          <button className="btn view-btn" onClick={handleViewApplications}>
+            Ver Histórico
+          </button>
+        </section>
             {/* Financial Reports */}
             <section className="finance">
               <h2>Finanzas</h2>
-              <p>💰 Ingresos estimados: $15,000</p>
-              <button className="btn finance-btn">Ver Reportes</button>
+              <p>💰 Ingresos estimados: $00,000</p>
+              <button className="btn finance-btn" onClick={() => alert("🚧 Funcionalidad en desarrollo...")}>
+  Ver Reportes
+</button>
             </section>
           </main>
         </div>

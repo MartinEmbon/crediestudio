@@ -87,7 +87,8 @@ nav .logo img {
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 20px 0; /* Added padding for spacing */
+      padding: 10px 0; /* Added padding for spacing */
+      gap:0 !important
   }
 
   .nav-links ul li {
