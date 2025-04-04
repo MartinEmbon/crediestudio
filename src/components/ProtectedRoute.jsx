@@ -12,7 +12,7 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({ children,requiredRole  }) => {
   const userInfo = useSelector((state) => state.user.userInfo);
 
   if (!userInfo) {

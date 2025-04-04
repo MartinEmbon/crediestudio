@@ -61,7 +61,7 @@ const Instituciones = () => {
       <div className="instituciones-container">
         <div className="instituciones-main">
         <h2>Vende con tarjeta al contado o en hasta 12 cuotas, con o sin intereses.</h2>
-        <p>Las principales tarjetas disponibles para cerrar más ventas.</p>
+        {/* <p>Las principales tarjetas disponibles para cerrar más ventas.</p> */}
 
           <div className="instituciones-benefits">
             <div className="benefit">

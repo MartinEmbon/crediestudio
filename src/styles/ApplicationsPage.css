@@ -51,7 +51,7 @@ h2 {
 }
 
 /* Botón volver */
-.back-to-institution-dash {
+.back-to-institution-dash, .review-button {
     display: block;
     /* width: 100%; */
     padding: 12px;
@@ -69,6 +69,13 @@ h2 {
     margin: 10px auto;
 }
 
-.back-to-institution-dash:hover {
+.back-to-institution-dash:hover,
+.review-button:hover {
     background-color: #8e44ad;
 }
+
+.review-button{
+    margin-top: 0;
+    width: 100%;
+}
+

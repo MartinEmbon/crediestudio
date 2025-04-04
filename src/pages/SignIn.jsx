@@ -10,21 +10,6 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import Footer from "../components/Footer";
 
-// Mock Users for Testing
-const mockUsers = [
-  {
-    id: 1,
-    name: "Juan Pérez",
-    email: "juanperez@example.com",
-    role: "student",
-  },
-  {
-    id: 2,
-    name: "Instituto Educativo ABC",
-    email: "admin@institutoabc.com",
-    role: "institution",
-  }
-];
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -61,8 +46,9 @@ const SignIn = () => {
 
     } catch (error) {
         console.error("Sign-in error:", error);  // Added logging for debugging
+        setError("Usuario o contraseña incorrectos. Por favor, verificá tus datos e intentá nuevamente.");
 
-        setError(error.response?.data || "Error signing in.");
+        // setError(error.response?.data || "Error signing in.");
     }
 };
 
@@ -87,7 +73,26 @@ const handleGoogleLoginSuccess = (response) => {
     // Redirect to the dashboard
     navigate("/dashboard");
 };
-
+const handleForgotPassword = async () => {
+    if (!email) {
+      setError("Ingresá tu correo electrónico para restablecer la contraseña.");
+      return;
+    }
+  
+    try {
+      const response = await axios.post(
+        "https://request-password-reset-589432081267.us-central1.run.app",
+        { email }
+      );
+  
+      alert("Te enviamos un enlace para restablecer tu contraseña. Revisá tu correo.");
+    } catch (error) {
+      console.error("Error al enviar el restablecimiento:", error);
+      setError("Hubo un problema. Por favor, intentá de nuevo más tarde.");
+    }
+  };
+  
+  
   return (
     <>
       <Navbar />
@@ -109,6 +114,11 @@ const handleGoogleLoginSuccess = (response) => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <p className="forgot-password" onClick={handleForgotPassword}>
+  ¿No recordás tu contraseña?
+</p>
+                        {error && <p className="error-message">{error}</p>} {/* ✅ Display error message */}
+
             <button type="submit" className="btn">Ingresar</button>
           </form>
           <p>O iniciá sesión con Google:</p>

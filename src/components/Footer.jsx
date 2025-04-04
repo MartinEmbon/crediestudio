@@ -7,6 +7,17 @@ const Footer = () => {
       <div className="home-footer-text">
         <p>&copy; 2025 Educacion Plus | Todos los derechos reservados.</p>
       </div>
+
+      <div className="whatsapp-button">
+          <a
+            target="_blank"
+            href="https://wa.me/5493795003578"
+            className="whatsapp-link"
+            rel="noreferrer"
+          >
+            <i className="fab fa-whatsapp"></i> 
+          </a>
+        </div>
     </footer>
   );
 };

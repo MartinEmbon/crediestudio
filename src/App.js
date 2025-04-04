@@ -25,6 +25,10 @@ import UserProfile from "./pages/UserProfile";
 import DashboardInstitution from "./pages/DashboardInstitution";
 
 import ApplicationsPage from "./pages/ApplicationsPage";
+import AdminCourseForm from "./pages/AdminLoanForm";
+import SignInAdmin from "./pages/SignInAdmin";
+import AdminApplications from "./pages/AdminApplications";
+import ResetPassword from "./pages/ResetPassword";
 
 
 
@@ -42,10 +46,12 @@ const App = () => {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/instituciones" element={<Instituciones />} />
             <Route path="/para-alumnos" element={<ParaAlunos />} />
-
+            <Route path="/admin-login" element={<SignInAdmin />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+
             {/* <Route path="/admin-dashboard" element={<AdminDashboard />} /> */}
 
             {/* <Route path="/dashboard" element={<UserDashboard />} /> */}
@@ -77,6 +83,22 @@ const App = () => {
               }
             />
 
+<Route
+              path="/admin"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <AdminCourseForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin-applications"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <AdminApplications />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/solicitud-prestamo"
               element={

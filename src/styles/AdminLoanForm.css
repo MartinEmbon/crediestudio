@@ -1,0 +1,137 @@
+/* 📌 Estilos gerais */
+.admin-loan-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+}
+
+/* 🏷️ Encabezado */
+.admin-loan-form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-loan-form-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* 📜 Tarjeta de Informação */
+.loan-info-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.loan-info-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Campos do Formulário */
+.admin-loan-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.admin-loan-form input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 🎯 Botão de Salvar */
+.submit-btn {
+  display: block;
+  width: 70%;
+  background-color: #9b51e0;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  /* margin-top: 80px; */
+}
+
+.submit-btn:hover {
+  background-color: #8e44ad;
+}
+
+
+
+.reject-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  display: block;
+  width: 30%;
+
+}
+
+.reject-btn:hover {
+  background-color: darkred;
+}
+/* 🔙 Botão de Voltar */
+.back-button-admin {
+  display: block;
+  width: 100%;
+  background-color: #ccc;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back-button:hover {
+  background-color: #b3b3b3;
+}
+
+
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .admin-loan-form-container {
+    padding: 10px;
+  }
+
+  .admin-loan-form label {
+    font-size: 14px;
+  }
+
+  .admin-loan-form input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-btn, .back-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+.group-btn{
+  display: flex;
+}

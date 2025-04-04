@@ -8,6 +8,7 @@ import boletoIcon from "../assets/boleto.avif";
 import invoiceIcon from "../assets/invoice.avif";
 import dashboardIcon from "../assets/dashboard.avif";
 import whatsappIcon from "../assets/whatsapp.avif";
+import creditoInstitution from "../assets/credito-institucion.avif"
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -52,8 +53,8 @@ const ParaAlunos = () => {
       <div className="hero-section">
         <img src={heroImage} alt="Benefícios para estudantes" className="hero-image" />
         <div className="hero-text">
-          <h1>Pagá en hasta 36 cuotas</h1>
-          <p>¡Todo en menos de 3 minutos!</p>
+          <h1>Educación al alcance de todos</h1>
+          <p>¡Financiación flexible para que sigas avanzando!</p>
           <Link to="/signin" className="btn">Ingresá al Portal</Link>
 
         </div>
@@ -65,18 +66,22 @@ const ParaAlunos = () => {
   <div className="benefit-list">
     <div className="benefit-item">
       <img src={creditCardIcon} alt="Cartão de Crédito" />
-      <p><strong>Tarjeta de crédito:</strong> Elegí la opción que mejor se adapte a tu presupuesto.</p>
+      <p><strong>Medios de pago adaptables:</strong> Elegí la opción que mejor se adapte a tu presupuesto.</p>
+    </div>
+      <div className="benefit-item">
+      <img src={invoiceIcon} alt="Cartão de Crédito" />
+      <p><strong>Proceso simple y rápido:</strong> Transparencia total en los pagos, sin sorpresas.</p>
     </div>
     <div className="benefit-item">
       <img src={pixIcon} alt="Pix / Boleto" />
-      <p><strong>Transferencia / Pago al contado:</strong> Opciones de pago flexibles para tus estudios.</p>
+      <p><strong>Pago directo:</strong> Opciones de pago flexibles para tus estudios.</p>
     </div>
     <div className="benefit-item">
       <img src={boletoIcon} alt="Boleto Parcelado" />
-      <p><strong>Cuotas con factura:</strong> Financiá tu curso en hasta 36 cuotas y estudiá con tranquilidad.</p>
+      <p><strong>Financiación accesible:</strong> Financiá tu curso y estudiá con tranquilidad.</p>
     </div>
     <div className="benefit-item">
-      <img src={invoiceIcon} alt="Fatura" />
+      <img src={dashboardIcon} alt="Fatura" />
       <p><strong>Panel del Estudiante:</strong> Toda la información importante en un solo lugar.</p>
     </div>
     <div className="benefit-item">
@@ -91,8 +96,8 @@ const ParaAlunos = () => {
 <h2>¿Cómo funciona?</h2>
 <ol>
 <li><i className="fas fa-1"></i> La Institución Educativa que ofrece el curso debe ser nuestro socio.</li>
-    <li><i className="fas fa-2"></i> Accedés al link de compra del curso y realizás el pago dentro de la plataforma de Principia.</li>
-    <li><i className="fas fa-3"></i> Elegís la forma de pago y el plan de cuotas que mejor se ajuste a tu bolsillo.</li>
+    <li><i className="fas fa-2"></i> Accedés al link de compra del curso y elegís la opción de pago con CrediEstudio.</li>
+    <li><i className="fas fa-3"></i> Completá tu registro en CrediEstudio y aplicá a tu crédito en solo 3 minutos.</li>
   </ol>
 </div>
 

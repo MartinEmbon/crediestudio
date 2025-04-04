@@ -41,7 +41,8 @@ const Navbar = () => {
                 <li><Link to="/para-alumnos" onClick={toggleMenu}>Alumnos</Link></li>
                     <li><Link to="/signin" onClick={toggleMenu}>Iniciar Sesión</Link></li>
                     <li><Link to="/signup" onClick={toggleMenu}>Registrarse</Link></li>
-               
+                    {/* <li><Link to="/admin-login" onClick={toggleMenu}>Admin</Link></li> */}
+
                     <li><Link to="/contacto" onClick={toggleMenu}>Contacto</Link></li>
                 </ul>
             </div>
