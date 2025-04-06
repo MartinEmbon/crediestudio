@@ -9,29 +9,53 @@ import { useDispatch } from "react-redux";
 import "../styles/CourseSummary.css";
 import Footer from "../components/Footer";
 import axios from "axios"; // Make sure you have this at the top
-import { useLocation } from "react-router-dom";
-import { addDays, addMonths, setDate, format } from "date-fns";
 
 const CourseSummary = () => {
-  const location = useLocation()
-  // Create the full schedule dynamically
-
-  const [courseData, setCourseData] = useState(location.state?.course || null);
-
-
   const userData = useSelector((state) => state.user.userInfo);
   const userInfo = userData?.userInfo;  
-  const [paymentSchedule, setPaymentSchedule] = useState([]);
-
-  // const [courseData, setCourseData] = useState(null);
+  const [courseData, setCourseData] = useState(null);
   const user = useSelector((state) => state.user.userInfo);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const onLogout = () => {
     dispatch(setUser(null));
     navigate("/signin");
   };
 
+  // useEffect(() => {
+  //   const mockCourseData = {
+  //     courseName: "Curso de Desarrollo Web",
+  //     totalPrice: 500,
+  //     interestRate: "10%",
+  //     termMonths: 6,
+  //     paidAmount: 200,
+  //     quotasPaid: 2,
+  //     quotasRemaining: 3,
+  //     nextPaymentDate: "2025-04-01",
+  //     nextPaymentAmount: 100,
+  //     paymentSchedule: [
+  //       { date: "2025-03-01", amount: 100, status: "✅ Pagado" },
+  //       { date: "2025-03-15", amount: 100, status: "✅ Pagado" },
+  //       { date: "2025-04-01", amount: 100, status: "⏳ Pendiente" },
+  //       { date: "2025-05-01", amount: 100, status: "⏳ Pendiente" },
+  //       { date: "2025-06-01", amount: 100, status: "⏳ Pendiente" },
+  //     ],
+  //     paymentHistory: [
+  //       { date: "2025-03-01", amount: 100, method: "Tarjeta de Crédito", receipt: "REC123" },
+  //       { date: "2025-03-15", amount: 100, method: "Transferencia", receipt: "REC124" },
+  //     ],
+  //   };
+  //   setCourseData(mockCourseData);
+
+  //   const nextPaymentDate = new Date(mockCourseData.nextPaymentDate);
+  //   const currentDate = new Date();
+  //   const diffDays = Math.ceil((nextPaymentDate - currentDate) / (1000 * 3600 * 24));
+
+  //   if (diffDays <= 7) {
+  //     toast.info(`¡Tu próxima cuota de ${mockCourseData.nextPaymentAmount} es en ${diffDays} días!`);
+  //   }
+  // }, []);
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
@@ -73,59 +97,7 @@ const CourseSummary = () => {
   }
   }, [userInfo]); // ✅ Add the email as a dependency
   
-
-  // const paymentSchedule = [];
-
-  useEffect(() => {
-    if (courseData?.decisionDate && courseData?.numInstallments) {
-      let decisionDate;
   
-      // ✅ Convert Firestore timestamp to JS Date
-      if (
-        courseData.decisionDate &&
-        typeof courseData.decisionDate === "object" &&
-        courseData.decisionDate._seconds
-      ) {
-        decisionDate = new Date(courseData.decisionDate._seconds * 1000);
-      } else {
-        decisionDate = new Date(courseData.decisionDate);
-      }
-      
-  
-      if (!isNaN(decisionDate.getTime())) {
-        const schedule = [];
-  
-        // 🔹 Pago inicial (día siguiente a la decisión)
-        const downPaymentDate = addDays(decisionDate, 1);
-        schedule.push({
-          concept: "Anticipo",
-          date: format(addDays(decisionDate, 1), "dd/MM/yyyy"),
-          amount: Number(courseData.downPayment).toFixed(2),
-          status: "⏳ Pendiente",
-        });
-  
-        // 🔹 Cuotas mensuales (cada 10 del mes, empezando el mes siguiente)
-        const monthlyAmount = courseData.installmentValue || 0;
-
-        
-          for (let i = 0; i < courseData.numInstallments; i++) {
-            const monthDate = addMonths(decisionDate, i + 1);
-            const dueDate = setDate(monthDate, 10); // sets to 10th of the month
-          
-            schedule.push({
-              concept: "Cuota mensual",
-              date: format(dueDate, "dd/MM/yyyy"),
-              amount: monthlyAmount.toFixed(2),
-              status: "⏳ Pendiente",
-            });
-        }
-  
-        setPaymentSchedule(schedule);
-      } else {
-        console.warn("⚠️ Fecha inválida:", courseData.decisionDate);
-      }
-    }
-  }, [courseData]);
   
 
   const handlePayment = () => {
@@ -149,29 +121,10 @@ const CourseSummary = () => {
       <p><strong>📌 Monto total:</strong> ${courseData.finalPrice}</p>
         <p><strong>💰 Tasa de interés:</strong> {courseData.interestRate}</p>
         <p><strong>📅 Plazo:</strong> {courseData.numInstallments} meses</p>
-        <p><strong>📅 Valor de cuota:</strong> {courseData.installmentValue}</p>
-        {paymentSchedule.length > 1 && (
-  <>
-    <p><strong>📆 Inicio del financiamiento:</strong> {
-      paymentSchedule.find(p => p.concept === "Cuota mensual")?.date
-    }</p>
-    <p><strong>📆 Fin del financiamiento:</strong> {
-      [...paymentSchedule].reverse().find(p => p.concept === "Cuota mensual")?.date
-    }</p>
-  </>
-)}
-
-
-        {/* <p><strong>💳 Lo que has pagado:</strong> ${courseData.paidAmount}</p>
-        <p><strong>🔻 Saldo pendiente:</strong> ${courseData.totalPrice - courseData.paidAmount}</p> */}
-
-{/* ✅ Descargar contrato button */}
-<button
-    className="download-contract-button pay-button"
-    onClick={() => window.open(courseData.contractUrl || "#", "_blank")}
-  >
-    📄 Descargar Contrato
-  </button>      </section>
+        <p><strong>💳 Lo que has pagado:</strong> ${courseData.paidAmount}</p>
+        <p><strong>🔻 Saldo pendiente:</strong> ${courseData.totalPrice - courseData.paidAmount}</p>
+        <button className="pay-button" onClick={handlePayment}>Pagar Ahora</button>
+      </section>
 
       {/* 🔹 Cronograma de Pagos */}
       <section className="payment-schedule">
@@ -179,8 +132,6 @@ const CourseSummary = () => {
         <table className="payment-schedule-table">
           <thead>
             <tr>
-            <th>Concepto</th>
-
               <th>Fecha</th>
               <th>Monto</th>
               <th>Estado</th>
@@ -188,34 +139,17 @@ const CourseSummary = () => {
             </tr>
           </thead>
           <tbody>
-          {paymentSchedule.length > 0 ? (
-  paymentSchedule.map((payment, index) => (
+            {courseData?.paymentSchedule?.length > 0 ? (
+              courseData.paymentSchedule.map((payment, index) => (
                 <tr key={index}>
-                        <td>{payment.concept}</td>
-
                   <td>{payment.date}</td>
                   <td>${payment.amount}</td>
+                  <td>{payment.status}</td>
                   <td>
-        {payment.status === "⏳ Pendiente" ? (
-          (() => {
-            const dueDate = new Date(payment.date.split("/").reverse().join("-"));
-            const today = new Date();
-            const diffDays = Math.ceil((dueDate - today) / (1000 * 3600 * 24));
-            return diffDays >= 0
-              ? `⏳ Pendiente (${diffDays} días)`
-              : `❌ Vencido (${Math.abs(diffDays)} días)`;
-          })()
-        ) : (
-          payment.status
-        )}
-      </td>
-      <td>
-        {payment.status === "⏳ Pendiente" ? (
-          <button className="pay-now-btn" onClick={handlePayment}>Pagar</button>
-        ) : (
-          <button className="view-receipt-btn">Ver Recibo</button>
-        )}
-      </td>
+                    {payment.status === "⏳ Pendiente" && (
+                      <button className="pay-now-btn" onClick={handlePayment}>Pagar</button>
+                    )}
+                  </td>
                 </tr>
               ))
             ) : (
@@ -228,7 +162,33 @@ const CourseSummary = () => {
       </section>
 
       {/* 🔹 Historial de Pagos */}
-     
+      <section className="payment-history">
+        <h3>💳 Historial de Pagos</h3>
+        {courseData?.paymentHistory?.length > 0 ? (
+          <table className="payment-history-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Monto</th>
+                <th>Método de Pago</th>
+                <th>Recibo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courseData.paymentHistory.map((payment, index) => (
+                <tr key={index}>
+                  <td>{payment.date}</td>
+                  <td>${payment.amount}</td>
+                  <td>{payment.method}</td>
+                  <td>{payment.receipt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No hay pagos registrados aún.</p>
+        )}
+      </section>
     </>
   ) : (
     <p>Cargando información del curso...</p>
@@ -236,11 +196,10 @@ const CourseSummary = () => {
 
 <button
           className="loan-form button back-button back-to-dash"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/dashboard")}
         >Volver
         </button>
 </main>
-
 
         
         <ToastContainer />

@@ -16,12 +16,12 @@ const Contacto = () => {
       <div className="hero-section">
         <img src={contactHeroImage} alt="Transforme sua audiência em lucro" className="hero-image" />
         <div className="hero-text">
-        <h1>Transformá tu audiencia en ganancias</h1>
+        <h1>Transformá tu audiencia en ingresos reales</h1>
         <p>
-          Ofrecé tus cursos con opciones de pago, recibí al contado y convertí hasta un 35% más con la
-          mayor aprobación y agilidad del mercado.
+        Ofrecé tus cursos con financiación flexible, cobrá al contado y simplificá la gestión de pagos con la solución más ágil del mercado.
+
         </p>
-          <button className="btn">Contáctanos</button>
+          <button className="btn btn-hero">Contáctanos</button>
         </div>
       </div>
   

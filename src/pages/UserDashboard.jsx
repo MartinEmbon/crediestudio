@@ -102,10 +102,12 @@ const UserDashboard = () => {
                         <p>Accedé a financiamiento para tu educación con solo unos clics.</p>
                     </div>
 
-                    <div className="dashboard-card" onClick={() => navigate("/mis-prestamos")}>
+                    <div className="dashboard-card" onClick={() => navigate("/mis-productos")}>
+                    {/* <div className="dashboard-card" onClick={() => navigate("/mis-prestamos")}> */}
+
                         <i className="fas fa-list-alt fa-3x card-icon"></i>
-                        <h3>Ver Préstamos Actuales</h3>
-                        <p>Consultá el estado de tus préstamos en curso y su información.</p>
+                        <h3>Mis Productos</h3>
+                        <p>Consultá el estado de tus curso y su información.</p>
                     </div>
                 </div>
 

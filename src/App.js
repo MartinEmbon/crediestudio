@@ -29,6 +29,7 @@ import AdminCourseForm from "./pages/AdminLoanForm";
 import SignInAdmin from "./pages/SignInAdmin";
 import AdminApplications from "./pages/AdminApplications";
 import ResetPassword from "./pages/ResetPassword";
+import MyProducts from "./pages/MyProducts";
 
 
 
@@ -59,10 +60,18 @@ const App = () => {
 
             {/* Rutas privadas protegidas */}
             <Route
-              path="/mis-prestamos"
+              path="/mis-productos/:id"
               element={
                 <ProtectedRoute>
                   <CourseSummary />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/mis-productos"
+              element={
+                <ProtectedRoute>
+                  <MyProducts />
                 </ProtectedRoute>
               }
             />

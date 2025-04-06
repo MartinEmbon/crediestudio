@@ -106,6 +106,19 @@ console.log(loanData)
         requestId: loanData.requestId, // Ensure you have this field
 
       });
+
+       // 🔹 3. Save full loan data to Firestore (including interest installment)
+       await axios.post("https://loand-decission-589432081267.us-central1.run.app", {
+        studentName: loanData.studentName,
+        studentEmail: loanData.studentEmail,
+        courseName: loanData.courseName,
+        finalPrice: Number(loanData.finalPrice),
+        numInstallments: Number(loanData.numInstallments),
+        downPayment: Number(loanData.downPayment),
+        installmentValue: parseFloat(calculateInstallmentWithInterest().toFixed(2)),
+        interestRate: Number(loanData.interestRate),
+        status: loanStatus, // "approved" or "rejected"
+      });
   
       alert(`Estado de crédito actualizado a ${loanStatus} y notificación enviada al alumno.`);
       navigate("/admin-applications"); // Redirigir después de la operación
@@ -185,16 +198,26 @@ console.log(loanData)
             <input type="number" name="interestRate" value={loanData.interestRate} onChange={handleChange} required />
           
             <label>Plan de Cuotas s/interés</label>
-            <input type="text" name="installmentPlan" 
-              value={`Pago inicial de $${loanData.downPayment.toFixed(2)} y ${loanData.numInstallments} cuotas de $${loanData.installmentValue.toFixed(2)}`} 
-              readOnly />
-
+<input 
+  type="text" 
+  name="installmentPlan" 
+  value={`Pago inicial de $${loanData.downPayment.toFixed(2)} y ${loanData.numInstallments} cuotas de $${loanData.installmentValue.toFixed(2)}`} 
+  readOnly 
+/>
 
 <label>Plan de Cuotas c/interés</label>
 <input 
   type="text" 
   name="installmentPlanWithInterest" 
   value={`Pago inicial de $${loanData.downPayment.toFixed(2)} y ${loanData.numInstallments} cuotas de $${calculateInstallmentWithInterest().toFixed(2)}`} 
+  readOnly 
+/>
+
+<label>Total a pagar en cuotas con interés</label>
+<input 
+  type="text" 
+  name="totalInstallmentsWithInterest" 
+  value={`$${(calculateInstallmentWithInterest() * loanData.numInstallments).toFixed(2)}`} 
   readOnly 
 />
 

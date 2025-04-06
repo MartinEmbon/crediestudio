@@ -1,0 +1,79 @@
+.products-container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+  
+  .products-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  
+  .course-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-align: left;
+  }
+  
+  .course-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    color: #222;
+  }
+  
+  .course-card p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .progress-text {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  @media (max-width: 600px) {
+    .products-container {
+      padding: 1rem;
+    }
+  
+    .course-card {
+      max-width: 100%;
+    }
+  }
+  

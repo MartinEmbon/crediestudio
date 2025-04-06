@@ -291,6 +291,11 @@
       padding: 8px 16px; /* Adjust padding */
       
     }
+    .btn-hero{
+      width: 80%;
+      display: block;
+      margin: 0; /* Align left */ 
+    }
   
     /* Receita Garantida */
     .home-receita h2 {
@@ -387,6 +392,11 @@
     .home-receita h2 {
       font-size: 1.8rem; /* Smaller title on mobile */
     }
+    .btn-hero{
+      width: 80%;
+      display: block;
+      margin: 0; /* Align left */ 
+    }
   
     .home-receita p {
       font-size: 0.9rem; /* Adjust text size */
@@ -429,4 +439,10 @@
     .home-porque-usar-item {
         width: 100%; /* 1 columna en mobile */
     }
+    .btn-hero{
+      width: 80%;
+      display: block;
+      margin: 0; /* Align left */ 
+    }
+  
 }

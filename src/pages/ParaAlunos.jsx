@@ -11,6 +11,8 @@ import whatsappIcon from "../assets/whatsapp.avif";
 import creditoInstitution from "../assets/credito-institucion.avif"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import contactHeroImage from "../assets/hero-contacto.png";
+
 import Footer from "../components/Footer";
 const ParaAlunos = () => {
   const [formData, setFormData] = useState({
@@ -51,11 +53,11 @@ const ParaAlunos = () => {
       
       {/* Hero Section */}
       <div className="hero-section">
-        <img src={heroImage} alt="Benefícios para estudantes" className="hero-image" />
+        <img src={contactHeroImage} alt="Benefícios para estudantes" className="hero-image" />
         <div className="hero-text">
           <h1>Educación al alcance de todos</h1>
           <p>¡Financiación flexible para que sigas avanzando!</p>
-          <Link to="/signin" className="btn">Ingresá al Portal</Link>
+          <Link to="/signin" className="btn btn-hero">Ingresá al Portal</Link>
 
         </div>
       </div>
@@ -95,9 +97,9 @@ const ParaAlunos = () => {
 <div className="como-funciona">
 <h2>¿Cómo funciona?</h2>
 <ol>
-<li><i className="fas fa-1"></i> La Institución Educativa que ofrece el curso debe ser nuestro socio.</li>
-    <li><i className="fas fa-2"></i> Accedés al link de compra del curso y elegís la opción de pago con CrediEstudio.</li>
-    <li><i className="fas fa-3"></i> Completá tu registro en CrediEstudio y aplicá a tu crédito en solo 3 minutos.</li>
+<li><i className="fas fa-1"></i> Elegí tu curso: Accedé al link de compra del curso desde la página de la institución.</li>
+    <li><i className="fas fa-2"></i> Seleccioná CrediEstudio como medio de pago en el checkout.</li>
+    <li><i className="fas fa-3"></i> Completá tu registro y si tu crédito es aprobado, empezás el curso y pagás en cuotas accesibles.</li>
   </ol>
 </div>
 

@@ -40,8 +40,8 @@ const UserProfile = () => {
           setMonthlyIncome(loanData.monthlyIncome || "");
           setCoSigner(loanData.coSigner || "");
           setDateOfBirth(loanData.dateOfBirth || "");
-          setCity(loanData.address || "");
-          setZipCode(loanData.address || "");
+          setCity(loanData.city || "");
+          setZipCode(loanData.zipCode || "");
 
         }
       } catch (error) {
@@ -105,7 +105,7 @@ const UserProfile = () => {
         { userEmail, loanApplicationData }
       );
 
-      alert("Loan request submitted successfully!");
+      alert("Perfil actualizado con éxito!");
       console.log(response.data);
 
       // Mark profile as complete (this is optional)

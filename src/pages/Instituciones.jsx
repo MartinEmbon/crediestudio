@@ -52,7 +52,7 @@ const Instituciones = () => {
         <div className="hero-text">
         <h1>Checkout completo para vender tu curso</h1>
           <p>Tené una experiencia de compra simplificada, gestioná tus ventas y obtené más tiempo para enfocarte en lo que importa: la enseñanza.</p>
-          <Link to="/contacto" className="btn">Contáctanos</Link>
+          <Link to="/contacto" className="btn btn-hero">Contáctanos</Link>
 
         </div>
       </div>
@@ -60,14 +60,14 @@ const Instituciones = () => {
       {/* Main Content */}
       <div className="instituciones-container">
         <div className="instituciones-main">
-        <h2>Vende con tarjeta al contado o en hasta 12 cuotas, con o sin intereses.</h2>
+        <h2>La manera más simple de que digan sí a tu curso</h2>
         {/* <p>Las principales tarjetas disponibles para cerrar más ventas.</p> */}
 
           <div className="instituciones-benefits">
             <div className="benefit">
               <img src={creditCardIcon} alt="Cartão de Crédito" />
-              <h3>Tarjeta de crédito</h3>
-              <p>Vende al contado de forma simple, rápida y sin comisiones por emisión. Asegurá tus ventas con:</p>
+              <h3>Conversión asegurada</h3>
+              <p>Aumentá tus ventas ofreciendo cuotas accesibles directamente desde tu plataforma:</p>
               <ul>
               <li><span className="bullet">✔</span> Bajo costo operativo</li>
               <li><span className="bullet">✔</span> Ingreso inmediato</li>
@@ -77,23 +77,23 @@ const Instituciones = () => {
 
             <div className="benefit">
               <img src={pixIcon} alt="Pix / Boleto" />
-              <h3>Al contado</h3>
-              <p>Vende tus cursos en hasta 36 cuotas con boleto bancario o Pix con financiamiento sin complicaciones.</p>
+              <h3>Crédito a medida para educación</h3>
+              <p>Una solución pensada exclusivamente para instituciones educativas.</p>
               <ul>
-              <li><span className="bullet">✔</span> Alcanzá a personas sin tarjeta de crédito</li>
-              <li><span className="bullet">✔</span> Aumentá la conversión</li>
-              <li><span className="bullet">✔</span> Menos comisiones y burocracia</li>
+              <li><span className="bullet">✔</span> Financiación 100% alineada a la duración del curso</li>
+              <li><span className="bullet">✔</span> Análisis de crédito automático e inmediato</li>
+              <li><span className="bullet">✔</span> Aprobación sin bancos ni burocracia</li>
               </ul>
             </div>
 
             <div className="benefit">
               <img src={boletoIcon} alt="Boleto Parcelado" />
-              <h3>Crédito educativo</h3>
-              <p>Vende un 35% más que en otros checkouts con nuevas formas de pago.</p>
+              <h3>Gestión financiera simplificada</h3>
+              <p>Olvidate de perseguir pagos o administrar cuotas: todo está automatizado.</p>
               <ul>
-              <li><span className="bullet">✔</span> Aumento de la conversión con tecnología inteligente</li>
-              <li><span className="bullet">✔</span> Recursos centralizados para la gestión financiera</li>
-              <li><span className="bullet">✔</span> Operación autónoma con soporte especializado</li>
+              <li><span className="bullet">✔</span> Cobro asegurado desde el primer día</li>
+              <li><span className="bullet">✔</span> Plataforma centralizada para seguimiento y reportes</li>
+              <li><span className="bullet">✔</span> Soporte especializado para tu equipo</li>
             
               </ul>
             </div>

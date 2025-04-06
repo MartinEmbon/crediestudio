@@ -23,7 +23,7 @@ const Home = () => {
                         Aseguramos estabilidad financiera, menos deserción y más inscripciones
                         para que puedas enfocarte en lo más importante: la enseñanza.
                     </p>
-                    <Link to="/contacto" className="btn">Contáctanos</Link>
+                    <Link to="/contacto" className="btn btn-hero">Contáctanos</Link>
                 </div>
             </section>
 
@@ -34,13 +34,13 @@ const Home = () => {
                 <h2>INGRESOS GARANTIZADOS</h2>
                 <p>
                     Aseguramos el 100% de las cuotas en la fecha programada, sin morosidad.
-                    Checkout completo y crédito accesible para posgrados, cursos y capacitaciones.
+                    Checkout completo y crédito accesible para cursos y capacitaciones.
                 </p>
             </section>
 
             {/* PrincipiaPay */}
             <section className="home-principiapay">
-                <h2>CrediEstudio</h2>
+                <h2>Beneficios para Instituciones</h2>
                 <div className="home-principiapay-list">
                     <div className="home-principiapay-item">
                         <i className="fas fa-chart-line"></i> {/* Icono FontAwesome */}
@@ -74,7 +74,7 @@ const Home = () => {
 
             {/* Benefícios para quem ensina */}
             <section className="home-beneficios">
-                <h2>Beneficios Educativos</h2>
+                <h2>Beneficios para Estudiantes</h2>
                 <div className="home-beneficios-list">
                     <div className="home-beneficio">
                         <i className="fas fa-credit-card"></i>
