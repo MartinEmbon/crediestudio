@@ -79,10 +79,10 @@ const UserDashboard = () => {
                             <i className="fas fa-1"></i> Completá tu perfil con tus datos. Esto es muy importante porque tener la mayor cantidad de información actualizada te sumará puntos al momento de solicitar tu crédito.
                         </li>
                         <li>
-                            <i className="fas fa-2"></i> Completá el formulario de solicitud, especificando el curso o institución en la que querés inscribirte. Es importante saber que los créditos tienen un período de análisis de 24 a 48 horas hábiles.
+                        <i className="fas fa-2"></i> Completá el formulario de solicitud, especificando el curso e institución en la que querés inscribirte. El análisis de otorgamiento del crédito puede llevar hasta 48 horas hábiles.
                         </li>
                         <li>
-                            <i className="fas fa-3"></i> Te contactaremos con el resultado. Si tu solicitud es aprobada, recibirás el contrato para firmar digitalmente y tu calendario de pagos.
+                        <i className="fas fa-3"></i> Te contactaremos con el resultado. Si tu solicitud es aprobada, recibirás el contrato para firmar digitalmente y tu calendario de pagos.
                         </li>
                     </ol>
                 </div>
@@ -106,12 +106,19 @@ const UserDashboard = () => {
                     {/* <div className="dashboard-card" onClick={() => navigate("/mis-prestamos")}> */}
 
                         <i className="fas fa-list-alt fa-3x card-icon"></i>
-                        <h3>Mis Productos</h3>
-                        <p>Consultá el estado de tus curso y su información.</p>
+                        <h3>Mis Cursos</h3>
+                        <p>Consultá el estado de tus cursos y su información.</p>
+                    </div>
+
+
+                    <div className="dashboard-card" onClick={() => navigate("/preguntas-frecuentes")}>
+                        <i className="fas fa-money-bill-wave fa-3x card-icon"></i>
+                        <h3>Preguntas Frecuentes</h3>
+                        <p>Accedé a financiamiento para tu educación con solo unos clics.</p>
                     </div>
                 </div>
 
-                <div className="faq-section">
+                {/* <div className="faq-section">
                     <h2>Preguntas Frecuentes</h2>
                     {[
                         { question: "¿Cuánto tiempo tarda la aprobación del préstamo?", answer: "El tiempo de aprobación varía, pero suele tomar entre 3 y 5 días hábiles." },
@@ -127,7 +134,7 @@ const UserDashboard = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
 
                 {/* Formulario de Contacto */}

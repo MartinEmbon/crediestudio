@@ -105,7 +105,8 @@ const CourseSummary = () => {
         });
   
         // 🔹 Cuotas mensuales (cada 10 del mes, empezando el mes siguiente)
-        const monthlyAmount = courseData.installmentValue || 0;
+        const monthlyAmount = courseData.installmentValueWithInterest || 0;
+        // const monthlyAmount = courseData.installmentValue || 0;
 
         
           for (let i = 0; i < courseData.numInstallments; i++) {
@@ -146,16 +147,16 @@ const CourseSummary = () => {
       {/* 🔹 Resumen del Crédito */}
       <section className="credit-summary-card">
       <h2>{courseData?.courseName || "Nombre del curso no disponible"}</h2>
-      <p><strong>📌 Monto total:</strong> ${courseData.finalPrice}</p>
+      <p><strong>📌 Monto total:</strong> ${courseData.totalLoanAmount.toFixed(2)}</p>
         <p><strong>💰 Tasa de interés:</strong> {courseData.interestRate}</p>
         <p><strong>📅 Plazo:</strong> {courseData.numInstallments} meses</p>
-        <p><strong>📅 Valor de cuota:</strong> {courseData.installmentValue}</p>
+        <p><strong>🧾 Valor de cuota:</strong> {courseData.installmentValueWithInterest}</p>
         {paymentSchedule.length > 1 && (
   <>
-    <p><strong>📆 Inicio del financiamiento:</strong> {
+    <p><strong>🟢 Inicio del financiamiento:</strong> {
       paymentSchedule.find(p => p.concept === "Cuota mensual")?.date
     }</p>
-    <p><strong>📆 Fin del financiamiento:</strong> {
+    <p><strong>🔴 Fin del financiamiento:</strong> {
       [...paymentSchedule].reverse().find(p => p.concept === "Cuota mensual")?.date
     }</p>
   </>

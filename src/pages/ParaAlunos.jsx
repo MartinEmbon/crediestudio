@@ -106,7 +106,7 @@ const ParaAlunos = () => {
 
       {/* Contato */}
       <div className="para-alunos-form">
-      <h2>¿Necesitás atención y soporte para estudiantes?</h2>
+      <h2>¿Tenés alguna consulta?</h2>
       <p>¡Nuestro equipo está listo para ayudarte!</p>
         <form onSubmit={handleSubmit}>
           <label>Nombre:</label>

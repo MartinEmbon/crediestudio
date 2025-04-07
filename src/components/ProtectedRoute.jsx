@@ -14,12 +14,20 @@ import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({ children,requiredRole  }) => {
   const userInfo = useSelector((state) => state.user.userInfo);
+ 
+  const userRole = userInfo?.userRole;
+
+  console.log("🧠 userInfo:", userInfo);
+  console.log("🎓 userRole:", userRole);
+  console.log("🔐 requiredRole:", requiredRole);
 
   if (!userInfo) {
     // If the user is not logged in, return a Navigate component to redirect
     return <Navigate to="/signin" replace />;
   }
-
+  if (requiredRole && userRole !== requiredRole) {
+    return <Navigate to="/signin" replace />;
+  }
   return children; // Render children (protected content) if the user is logged in
 };
 

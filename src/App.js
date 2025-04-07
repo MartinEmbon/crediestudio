@@ -30,6 +30,7 @@ import SignInAdmin from "./pages/SignInAdmin";
 import AdminApplications from "./pages/AdminApplications";
 import ResetPassword from "./pages/ResetPassword";
 import MyProducts from "./pages/MyProducts";
+import FaqPreguntas from "./pages/FaqPreguntas";
 
 
 
@@ -52,7 +53,6 @@ const App = () => {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reset-password" element={<ResetPassword />} />
-
             {/* <Route path="/admin-dashboard" element={<AdminDashboard />} /> */}
 
             {/* <Route path="/dashboard" element={<UserDashboard />} /> */}
@@ -62,15 +62,23 @@ const App = () => {
             <Route
               path="/mis-productos/:id"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <CourseSummary />
+                </ProtectedRoute>
+              }
+            />
+             <Route
+              path="/preguntas-frecuentes"
+              element={
+                <ProtectedRoute requiredRole="student">
+                  <FaqPreguntas />
                 </ProtectedRoute>
               }
             />
             <Route
               path="/mis-productos"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <MyProducts />
                 </ProtectedRoute>
               }
@@ -78,7 +86,7 @@ const App = () => {
             <Route
               path="/applications"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="institution">
                   <ApplicationsPage />
                 </ProtectedRoute>
               }
@@ -86,7 +94,7 @@ const App = () => {
            <Route
               path="/perfil-usuario"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <UserProfile />
                 </ProtectedRoute>
               }
@@ -111,7 +119,7 @@ const App = () => {
             <Route
               path="/solicitud-prestamo"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <LoanRequest />
                 </ProtectedRoute>
               }
@@ -119,7 +127,7 @@ const App = () => {
             <Route
               path="/confirmacion-prestamo"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <LoanConfirmation />
                 </ProtectedRoute>
               }
@@ -127,7 +135,7 @@ const App = () => {
             <Route
               path="/dashboard"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole="student">
                   <UserDashboard />
                 </ProtectedRoute>
               }
@@ -135,8 +143,8 @@ const App = () => {
             <Route
               path="/dashboard-institution"
               element={
-                <ProtectedRoute>
-                  <DashboardInstitution />
+                <ProtectedRoute requiredRole="institution">
+                  <DashboardInstitution  />
                 </ProtectedRoute>
               }
             />

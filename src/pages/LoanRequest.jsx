@@ -82,12 +82,33 @@ const LoanRequest = () => {
     //     setFormData((prev) => ({ ...prev, course: "" }));
     //   }, [formData.institution]);
 
+    // const handleChange = (e) => {
+    //     setFormData({
+    //         ...formData,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // };
+
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+        const { name, value } = e.target;
+    
+        // If user changes course, auto-fill the amount
+        if (name === "course") {
+            const selectedCourse = courses.find((course) => course.name === value);
+            setFormData((prev) => ({
+                ...prev,
+                course: value,
+                requestedAmount: selectedCourse ? selectedCourse.price : "",
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
+        }
     };
+    
+    
 
     // Fetch institutions and courses from Firestore
     useEffect(() => {
@@ -95,6 +116,7 @@ const LoanRequest = () => {
             try {
                 const response = await axios.get("https://list-institution-and-couses-for-loan-589432081267.us-central1.run.app");
                 setInstitutions(response.data.institutions); // Store institutions and their courses
+                console.log("hey",response)
             } catch (error) {
                 console.error("Error fetching institutions and courses:", error);
             }
@@ -109,7 +131,7 @@ const LoanRequest = () => {
             (inst) => inst.institutionName === formData.institution
         );
         setCourses(selectedInstitution ? selectedInstitution.courses : []);
-        setFormData((prev) => ({ ...prev, course: "" })); // Reset course when institution changes
+        setFormData((prev) => ({ ...prev, course: "", requestedAmount: ""})); // Reset course when institution changes
     }, [formData.institution, institutions]);
 
 
@@ -236,7 +258,7 @@ const LoanRequest = () => {
 
                         <label>
                             Monto Solicitado:
-                            <input type="number" name="requestedAmount" value={formData.requestedAmount} onChange={handleChange} required />
+                            <input type="number" name="requestedAmount" value={formData.requestedAmount} onChange={handleChange} readOnly  />
 
                         </label>
 

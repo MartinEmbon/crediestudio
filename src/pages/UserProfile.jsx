@@ -39,7 +39,9 @@ const UserProfile = () => {
           setEmploymentStatus(loanData.employmentStatus || "");
           setMonthlyIncome(loanData.monthlyIncome || "");
           setCoSigner(loanData.coSigner || "");
-          setDateOfBirth(loanData.dateOfBirth || "");
+          setDateOfBirth(loanData.dateOfBirth ? loanData.dateOfBirth.substring(0, 10) : "");
+
+          // setDateOfBirth(loanData.dateOfBirth || "");
           setCity(loanData.city || "");
           setZipCode(loanData.zipCode || "");
 
@@ -170,20 +172,28 @@ const UserProfile = () => {
                 />
 
                 <label>Último Grado Académico:</label>
-                <input
-                  type="text"
-                  value={lastAcademicTitle}
-                  onChange={(e) => setLastAcademicTitle(e.target.value)}
-                  required
-                />
+                <select
+  value={lastAcademicTitle}
+  onChange={(e) => setLastAcademicTitle(e.target.value)}
+  required
+>
+  <option value="">Seleccionar</option>
+  <option value="Secundario completo">Secundario completo</option>
+  <option value="Terciario en curso">Terciario en curso</option>
+  <option value="Terciario completo">Terciario completo</option>
+  <option value="Universitario en curso">Universitario en curso</option>
+  <option value="Universitario completo">Universitario completo</option>
+  <option value="Posgrado">Posgrado</option>
+</select>
 
                 <label>Año de Egreso:</label>
                 <input
-                  type="text"
-                  value={yearLastAcademicYear}
-                  onChange={(e) => setYearLastAcademicYear(e.target.value)}
-                  required
-                />
+  type="number"
+  min="1950"
+  max={new Date().getFullYear()}
+  value={yearLastAcademicYear}
+  onChange={(e) => setYearLastAcademicYear(e.target.value)}
+  required/>
 
 <label> Fecha de Nacimiento:</label>
                 <input

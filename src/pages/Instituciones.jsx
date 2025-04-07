@@ -60,14 +60,14 @@ const Instituciones = () => {
       {/* Main Content */}
       <div className="instituciones-container">
         <div className="instituciones-main">
-        <h2>La manera más simple de que digan sí a tu curso</h2>
+        <h2>La manera más simple de que digan 'sí' a tu curso</h2>
         {/* <p>Las principales tarjetas disponibles para cerrar más ventas.</p> */}
 
           <div className="instituciones-benefits">
             <div className="benefit">
               <img src={creditCardIcon} alt="Cartão de Crédito" />
               <h3>Conversión asegurada</h3>
-              <p>Aumentá tus ventas ofreciendo cuotas accesibles directamente desde tu plataforma:</p>
+              <p>Impulsá tus ventas integrando una nueva opción de pago flexible en tu plataforma.</p>
               <ul>
               <li><span className="bullet">✔</span> Bajo costo operativo</li>
               <li><span className="bullet">✔</span> Ingreso inmediato</li>
@@ -81,7 +81,7 @@ const Instituciones = () => {
               <p>Una solución pensada exclusivamente para instituciones educativas.</p>
               <ul>
               <li><span className="bullet">✔</span> Financiación 100% alineada a la duración del curso</li>
-              <li><span className="bullet">✔</span> Análisis de crédito automático e inmediato</li>
+              <li><span className="bullet">✔</span> Proceso de análisis automático y ágil</li>
               <li><span className="bullet">✔</span> Aprobación sin bancos ni burocracia</li>
               </ul>
             </div>

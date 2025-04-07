@@ -34,6 +34,7 @@ const SignIn = () => {
         dispatch(setUser({ userInfo: { name: userData.name, email: userData.email }, userRole: userData.role }));
 
          // ✅ Store user info in localStorage for persistence
+         console.log("✅ Dispatched userRole:", userData.role);
 
 
          localStorage.setItem("userName", userData.name);
